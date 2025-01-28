@@ -1,0 +1,12 @@
+dataset/
+.ipynb_checkpoints/
+anaconda_projects/
+*.ipynb
+.DS_Store
+__pycache__/
+*.png
+*.zip
+*.pdf
+build/
+dist/
+*.egg-info/
