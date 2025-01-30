@@ -318,15 +318,15 @@ def download_(root_path: str = './dataset'):
 
 
 data_dict = {
-    'ETTh1': (Dataset_ETT_hour, 'ETT-small/ETTh1.csv'),
-    'ETTh2': (Dataset_ETT_hour, 'ETT-small/ETTh2.csv'),
-    'ETTm1': (Dataset_ETT_minute, 'ETT-small/ETTm1.csv'),
-    'ETTm2': (Dataset_ETT_minute, 'ETT-small/ETTm2.csv'),
-    'electricity': (Dataset_Custom, 'electricity/electricity.csv'),
-    'exchange_rate': (Dataset_Custom, 'exchange_rate/exchange_rate.csv'),
-    'illness': (Dataset_Custom, 'illness/national_illness.csv'),
-    'traffic': (Dataset_Custom, 'traffic/traffic.csv'),
-    'weather': (Dataset_Custom, 'weather/weather.csv'),
+    'ETTh1': (Dataset_ETT_hour, 'ETT-small/ETTh1.csv', [336, 48, 96]),
+    'ETTh2': (Dataset_ETT_hour, 'ETT-small/ETTh2.csv', [336, 48, 96]),
+    'ETTm1': (Dataset_ETT_minute, 'ETT-small/ETTm1.csv', [336, 48, 96]),
+    'ETTm2': (Dataset_ETT_minute, 'ETT-small/ETTm2.csv', [336, 48, 96]),
+    'electricity': (Dataset_Custom, 'electricity/electricity.csv', [336,48,96]),
+    'exchange_rate': (Dataset_Custom, 'exchange_rate/exchange_rate.csv', [336, 48, 96]),
+    'illness': (Dataset_Custom, 'illness/national_illness.csv', [104, 48, 60]),
+    'traffic': (Dataset_Custom, 'traffic/traffic.csv', [336, 48, 96]),
+    'weather': (Dataset_Custom, 'weather/weather.csv', [336, 48, 96]),
 }
 
 
@@ -337,6 +337,9 @@ def data_provider(data: Literal["ETTh1", "ETTh2", "ETTm1", "ETTm2"], root_path: 
 
     Data = data_dict[data][0]
     data_path = data_dict[data][1]
+    if not size and len(data_dict[data]) > 2:
+        size = data_dict[data][2]
+
     data_set = Data(
         root_path=root_path,
         data_path=data_path,
