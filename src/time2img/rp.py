@@ -39,8 +39,8 @@ class RP_plotter(TimeSeriesPlotter):
         if color_bar:
             plt.colorbar()
         if label:
-            plt.xlabel("Timestamp", size=label_size)
-            plt.ylabel("Timestamp", size=label_size)
+            plt.xlabel("Timestep", size=label_size)
+            plt.ylabel("Timestep", size=label_size)
         plt.tick_params(axis='both', which='major', labelsize=tick_size)
         plt.tight_layout()
         if save:

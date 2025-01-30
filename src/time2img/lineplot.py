@@ -14,7 +14,7 @@ class Line_Plotter(TimeSeriesPlotter):
         plt.plot(x, linewidth=4, color=color)
         
         if label:
-            plt.xlabel("Timestamp", size=label_size)
+            plt.xlabel("Timestep", size=label_size)
             plt.ylabel("Value", size=label_size)
         plt.tick_params(axis='both', which='major', labelsize=tick_size)
         plt.tight_layout()

@@ -54,7 +54,7 @@ class UniHeatmap_Plotter(TimeSeriesPlotter):
 
             if label:
                 plt.ylabel("Patch Number", size=label_size)
-                plt.xlabel("Timestamp", size=label_size)
+                plt.xlabel("Timestep", size=label_size)
 
             if title:
                 plt.title(f"Signal Heatmap ({patch_num} patches)")
@@ -113,7 +113,7 @@ class MultiHeatmap_Plotter(TimeSeriesPlotter):
 
             if label:
                 plt.ylabel("Variates", size=label_size)
-                plt.xlabel("Timestamp", size=label_size)
+                plt.xlabel("Timestep", size=label_size)
 
             if title:
                 plt.title("Multivariate Signal Heatmap")

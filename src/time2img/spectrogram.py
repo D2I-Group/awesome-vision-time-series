@@ -78,7 +78,7 @@ class STFT_Plotter(TimeSeriesPlotter):
                 plt.colorbar()
 
             if label:
-                plt.xlabel("Timestamp", size=label_size)
+                plt.xlabel("Timestep", size=label_size)
                 plt.ylabel("Freq (Hz)", size=label_size)
 
             plt.tick_params(axis='both', which='major', labelsize=tick_size)
@@ -135,7 +135,7 @@ class Wavelet_Plotter(TimeSeriesPlotter):
             if colorbar:
                 plt.colorbar()
             if label:
-                plt.xlabel("Timestamp", size=label_size)
+                plt.xlabel("Timestep", size=label_size)
                 plt.ylabel("Scale", size=label_size)
                 plt.gca().yaxis.set_major_formatter(plt.ScalarFormatter(useMathText=True))
                 plt.ticklabel_format(style="sci", axis="y", scilimits=(0, 0))
@@ -256,7 +256,7 @@ class Filterbank_Plotter(TimeSeriesPlotter):
             if colorbar:
                 plt.colorbar()
             if label:
-                plt.xlabel("Timestamp", size=label_size)
+                plt.xlabel("Timestep", size=label_size)
                 plt.ylabel("Mel Frequency" if use_mel else "Frequency (Hz)", size=label_size)
             plt.tick_params(axis='both', which='major', labelsize=tick_size)
             plt.tight_layout()
