@@ -14,7 +14,7 @@ import os
 
 if __name__ == "__main__":
     # Univariate time series
-    dataset = data_provider(data='electricity', root_path="./dataset", split='train', download=True)
+    dataset = data_provider(data='electricity', root_path="./dataset", split='train', download=True, size=[336, 96, 96])
     seq_x, _, _, _ = dataset.__getitem__(0)
     X = seq_x[:, 0]
 
@@ -54,7 +54,7 @@ if __name__ == "__main__":
 
 
     # Multivariate time series
-    dataset = data_provider(data='electricity', root_path="./dataset", split='train', features='M', download=False)
+    dataset = data_provider(data='electricity', root_path="./dataset", split='train', features='M', download=False, size=[336, 96, 96])
     X, _, _, _ = dataset.__getitem__(0)
     plotter = MultiHeatmap_Plotter()
     plotter.plot(X, label=False, save_file='./image/unlabeled/multiheatmap.pdf')
