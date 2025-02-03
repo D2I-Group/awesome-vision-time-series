@@ -6,6 +6,7 @@ from time2img import (
     data_provider,
     UniHeatmap_Plotter,
     MultiHeatmap_Plotter,
+    AdaptiveHeatmap_Plotter,
     RP_plotter,
     Line_Plotter
 )
@@ -38,6 +39,10 @@ if __name__ == "__main__":
     plotter = UniHeatmap_Plotter()
     plotter.plot(X, patch_size=24, label=True, save_file='./image/labeled/heatmap.pdf')
     plotter.plot(X, patch_size=24, label=False, save_file='./image/unlabeled/heatmap.pdf')
+
+    plotter = AdaptiveHeatmap_Plotter()
+    plotter.plot(X, top_k=1, label=True, save_file='./image/labeled/adaptive_heatmap.pdf')
+    plotter.plot(X, top_k=1, label=False, save_file='./image/unlabeled/adaptive_heatmap.pdf')
 
     plotter = GAF_plotter()
     plotter.plot(X, method='summation', label=True, save_file='./image/labeled/gaf.pdf')
