@@ -225,7 +225,7 @@ class MultiHeatmap_Plotter(TimeSeriesPlotter):
             max_clip = values[-low_ind]
 
             plt.imshow(
-                x.clip(min=low_clip, max=max_clip),
+                x.clip(min=low_clip, max=max_clip).T,
                 aspect="auto",
                 origin="lower",  # Make time flow downward
                 cmap="jet",
