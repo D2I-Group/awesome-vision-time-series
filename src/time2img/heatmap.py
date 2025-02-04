@@ -198,14 +198,38 @@ class MultiHeatmap_Plotter(TimeSeriesPlotter):
             save: bool = True,
             save_file: str = 'multivariate_heatmap.pdf',
             label_size: int = 20,
-            tick_size: int = 15
+            tick_size: int = 15,
+            clip_percentage: float = 0.005
         ):
             plt.figure(figsize=(10, 6))
+
+            y = x.astype(int)
+            values, counts = np.unique(y, return_counts=True)
+            tot = 0
+            max_ind = 0
+            low_ind = 0
+            for i in counts:
+                if tot < np.sum(counts) * clip_percentage:
+                    tot += i
+                    max_ind += 1
+                else:
+                    break   
+            low_clip = values[max_ind] 
+            tot = 0
+            for i in counts[::-1]:
+                if tot < np.sum(counts) * clip_percentage:
+                    tot += i
+                    low_ind += 1
+                else:
+                    break  
+            max_clip = values[-low_ind]
+
             plt.imshow(
-                x.T,
+                x.clip(min=low_clip, max=max_clip),
                 aspect="auto",
                 origin="lower",  # Make time flow downward
-                cmap="viridis",
+                cmap="jet",
+                interpolation="nearest"
             )
 
             if colorbar:
