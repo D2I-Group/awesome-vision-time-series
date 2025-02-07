@@ -31,6 +31,8 @@ if __name__ == "__main__":
     plotter = Wavelet_Plotter()
     plotter.plot(X, label=True, save_file='./image/labeled/wavelet.pdf')
     plotter.plot(X, label=False, save_file='./image/unlabeled/wavelet.pdf')
+    plotter.plot(X, label=True, save_file='./image/labeled/wavelet_log.pdf', use_log=True, base=2)
+    plotter.plot(X, label=False, save_file='./image/unlabeled/wavelet_log.pdf', use_log=True, base=2)
 
     plotter = Filterbank_Plotter()
     plotter.plot(X, window_size=10, hop=1, T_x=3600, num_filters=10, label=True, save_file='./image/labeled/filterbank.pdf')

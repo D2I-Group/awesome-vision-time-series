@@ -122,13 +122,16 @@ class Wavelet_Plotter(TimeSeriesPlotter):
             save: bool = True,
             save_file: str = './wavelet.pdf',
             label_size: int = 20,
-            tick_size: int = 15
+            tick_size: int = 15,
+            use_log=False,
+            base=2
         ):
             coefficients, frequencies = pywt.cwt(x, scales, wavelet)
             plt.figure(figsize=(10, 6))
+            import math
             plt.imshow(
                 np.abs(coefficients),
-                extent=[0, len(x), 0, len(scales)],
+                extent=[0, len(x), 1, len(scales)] if use_log else [0, len(x), 0, len(scales)],
                 aspect="auto",
                 cmap="viridis",
             )
@@ -139,6 +142,9 @@ class Wavelet_Plotter(TimeSeriesPlotter):
                 plt.ylabel("Scale", size=label_size)
                 plt.gca().yaxis.set_major_formatter(plt.ScalarFormatter(useMathText=True))
                 plt.ticklabel_format(style="sci", axis="y", scilimits=(0, 0))
+            plt.gca().invert_yaxis()
+            if use_log:
+                plt.yscale('symlog', base=base)
             plt.tick_params(axis='both', which='major', labelsize=tick_size)
             plt.tight_layout()
             if save:
