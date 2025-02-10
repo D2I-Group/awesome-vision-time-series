@@ -29,7 +29,7 @@ Taxonomy are proposed as a dual view of *Time Series to Image Transformation* an
 
 #### Image Transformation of Time Series
 
-<small>The top panel includes single-modal models. The bottom panel includes multi-modal models. TS-Type denotes type of time series. TS-Recover denotes recovering time series from predicted images. </small> $*$<small>: the method has been used to model the individual UTSs of an MTS. </small>$^{\natural}$ <small>: a new pre-trained model was proposed in the work.</small> $^{\flat}$ <small>: when pre-trained models were unused, Fine-tune refers to train a task-specific model from scratch. </small>
+<sub>The top panel includes single-modal models. The bottom panel includes multi-modal models. TS-Type denotes type of time series. TS-Recover denotes recovering time series from predicted images. </sub> $*$<sub>: the method has been used to model the individual UTSs of an MTS. </sub>$^{\natural}$ <sub>: a new pre-trained model was proposed in the work.</sub> $^{\flat}$ <sub>: when pre-trained models were unused, Fine-tune refers to train a task-specific model from scratch. </sub>
 
 
 
