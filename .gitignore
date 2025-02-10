@@ -4,7 +4,7 @@ anaconda_projects/
 *.ipynb
 .DS_Store
 __pycache__/
-*.png
+src/*.png
 *.zip
 *.pdf
 build/
