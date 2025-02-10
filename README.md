@@ -29,12 +29,30 @@ Taxonomy are proposed as a dual view of *Time Series to Image Transformation* an
 
 #### Image Transformation of Time Series
 
-<sub>The top panel includes single-modal models. The bottom panel includes multi-modal models. TS-Type denotes type of time series. </sup>TS-Recover denotes recovering time series from predicted images. $*$: the method has been used to model the individual UTSs of an MTS. $^{\natural}$: a new pre-trained model was proposed in the work. $^{\flat}$: when pre-trained models were unused, Fine-tune refers to train a task-specific model from scratch. 
+<small>The top panel includes single-modal models. The bottom panel includes multi-modal models. TS-Type denotes type of time series. TS-Recover denotes recovering time series from predicted images. </small> $*$<small>: the method has been used to model the individual UTSs of an MTS. </small>$^{\natural}$ <small>: a new pre-trained model was proposed in the work.</small> $^{\flat}$ <small>: when pre-trained models were unused, Fine-tune refers to train a task-specific model from scratch. </small>
 
 
 
-Method|TS-Type|Imaging|Multimodal|Pre-trained|Fine-tune|Prompt|TS-Recover|Task|Domain
----------|---------------------|----|----|----|----|----|----|----|----|
+Method|TS-Type|Imaging|Multimodal|Model|Pre-trained|Fine-tune|Prompt|TS-Recover|Task|Domain
+:-----|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:--:|
+<small>Time series classification using compression distance of recurrence plots [[paper]()] </small>|UTS|RP|✘|K-NN|✘|✘|✘|✘|Classification|General
+<small>Encoding time series as images for visual inspection and classification using tiled convolutional neural networks [[paper]()] </small>
+<small>Imaging time-series to improve classification and imputation [[paper]()]</small>
+<small></small>
+<small></small>
+<small></small>
+<small></small>
+<small></small>
+<small></small>
+<small></small>
+<small></small>
+<small></small>
+<small></small>
+<small></small>
+<small></small>
+<small></small>
+<small></small>
+
 
 
 
