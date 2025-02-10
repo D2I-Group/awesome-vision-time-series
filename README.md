@@ -21,7 +21,7 @@ Resulting from the the discrepancy between continuous time series and the discre
 |:--:|:--:| 
 |Figure 1: The general process of leveraging vision models for time series analysis|Figure 2: Illustration of different modeling strategies on imaged time series |
 
-The overall structure of our survey follows the general process of applying vision models for time series analysis as delineated in Figure 1. Based on the proposed dual view taxonomy, primary imaging methods on time series and imaged modelling solutions, as shown in Figure 2, are reviewed in this survey, followed by the discussion including pre- & post- processing for time series recovery and future directions in this promising field.
+The overall structure of our survey follows the general process of applying vision models for time series analysis as delineated in Figure 1. Based on the proposed dual view taxonomy, primary imaging methods on time series and imaged modelling solutions shown in Figure 2, are reviewed in this survey, followed by the discussion including pre- & post- processing for time series recovery and future directions in this promising field.
 
 ***
 ### Taxonomy
@@ -29,8 +29,12 @@ Taxonomy are proposed as a dual view of *Time Series to Image Transformation* an
 
 #### Image Transformation of Time Series
 
+<sub>The top panel includes single-modal models. The bottom panel includes multi-modal models. TS-Type denotes type of time series. </sup>TS-Recover denotes recovering time series from predicted images. $*$: the method has been used to model the individual UTSs of an MTS. $^{\natural}$: a new pre-trained model was proposed in the work. $^{\flat}$: when pre-trained models were unused, Fine-tune refers to train a task-specific model from scratch. 
 
-#### 
+
+
+Method|TS-Type|Imaging|Multimodal|Pre-trained|Fine-tune|Prompt|TS-Recover|Task|Domain
+---------|---------------------|----|----|----|----|----|----|----|----|
 
 
 
