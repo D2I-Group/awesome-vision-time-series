@@ -17,7 +17,7 @@ This repository is under active maintenance by [Ziming Zhao](https://zhziming.gi
 ### Contribution
 Resulting from the the discrepancy between continuous time series and the discrete token space of LLMs, and the challenges in explicitly modeling the correlations of variates in MTS, research attentions have shifted to LVMs and VLMs for time series analysis. To fill the blank in the existing literature, this survey discusses the advantages of vision models over LLMs in time series analysis.
 
-|[<img src="./fig/structure.png" width="1200"/>](./fig/structure.png) |[<img src="./fig/Pipeline.png" width="3600"/>](./fig/Pipeline.png)|
+|[<img src="./fig/structure.png" width="500"/>](./fig/structure.png) |[<img src="./fig/Pipeline.png" width="3000"/>](./fig/Pipeline.png)|
 |:--:|:--:| 
 |Figure 1: The general process of leveraging vision models for time series analysis|Figure 2: Illustration of different modeling strategies on imaged time series |
 
