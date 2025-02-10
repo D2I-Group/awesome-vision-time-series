@@ -35,9 +35,9 @@ Taxonomy are proposed as a dual view of *Time Series to Image Transformation* an
 
 Method|TS-Type|Imaging|Multimodal|Model|Pre-trained|Fine-tune|Prompt|TS-Recover|Task|Domain
 :-----|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:--:|
-<small>Time series classification using compression distance of recurrence plots [[paper]()] </small>|UTS|RP|✘|K-NN|✘|✘|✘|✘|Classification|General
-<small>Encoding time series as images for visual inspection and classification using tiled convolutional neural networks [[paper]()] </small>
-<small>Imaging time-series to improve classification and imputation [[paper]()]</small>
+<sub>Time series classification using compression distance of recurrence plots [[paper]()] </sub>|UTS|RP|✘|K-NN|✘|✘|✘|✘|Classification|General
+<sub>Encoding time series as images for visual inspection and classification using tiled convolutional neural networks [[paper]()] </sub>
+<sub>Imaging time-series to improve classification and imputation [[paper]()]</sub>
 <small></small>
 <small></small>
 <small></small>
