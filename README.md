@@ -4,13 +4,21 @@
 # Awesome Vision Models for Time Series
 [![Awesome](https://awesome.re/badge.svg)](https://awesome.re) 
 [![Paper](https://img.shields.io/badge/paper-leave--red)](https://www.overleaf.com/project/677f07201833b1a0ba012653)
-[![PyPI - Version](https://img.shields.io/pypi/v/version)](#package-info)
+[![PyPI - Version](https://img.shields.io/pypi/v/version)](#package)
 </div>
 
 
 This repository tracks the latest paper on "Vision Model for Time series Analysis" and serves as the official repo for [Harnessing Vision Models for Time Series Analysis: A Survey](https://www.overleaf.com/project/677f07201833b1a0ba012653)
 
 This repository is under active maintenance by [Ziming Zhao](https://zhziming.github.io/) from **D2I Group@UH** led by [Dr.JingChao Ni](https://nijingchao.github.io/).
+
+<p align="center">
+    🏆&nbsp;<a href="#contribution">Contribution</a>
+    | 📌&nbsp;<a href="#taxonomy">Taxonomy</a>
+    | ⚙️&nbsp;<a href="#package">Package</a>
+    | 🔗&nbsp;<a href="#citation">Citation</a>
+</p>
+
 
 ***
 
@@ -73,7 +81,7 @@ Method|TS-Type|Imaging|Multimodal|Model|Pre-trained|Fine-tune|Prompt|TS-Recover|
 
 
 ***
-### Package Info
+### Package
 
 We have uploaded our code to package to PyPI, run the following command for installation.
 
