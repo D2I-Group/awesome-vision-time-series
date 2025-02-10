@@ -15,16 +15,22 @@ This repository is under active maintenance by [Ziming Zhao](https://zhziming.gi
 ***
 
 ### Contribution
-Resulted from the the discrepancy between continuous time series and the discrete token space of LLMs, and the challenges in explicitly modeling the correlations of variates in MTS, shifted research attentions to LVMs and VLMs. To fill the blank in the existing literature, this survey discusses the advantages of vision models over LLMs in time series analysis.
+Resulting from the the discrepancy between continuous time series and the discrete token space of LLMs, and the challenges in explicitly modeling the correlations of variates in MTS, research attentions have shifted to LVMs and VLMs for time series analysis. To fill the blank in the existing literature, this survey discusses the advantages of vision models over LLMs in time series analysis.
 
-|[<img src="./fig/s.png" width="50"/>](./fig/structure.png) |[<img src="./fig/Pipeline.png" width="1000"/>](./fig/Pipeline.png)|
+|[<img src="./fig/structure.png" width="1200"/>](./fig/structure.png) |[<img src="./fig/Pipeline.png" width="3600"/>](./fig/Pipeline.png)|
 |:--:|:--:| 
-| *Figure 1: The Framework of Our Survey* | *Figure 2: Categorization of Component Design for Fine-tuning Time Series LLMs* |
+|Figure 1: The general process of leveraging vision models for time series analysis|Figure 2: Illustration of different modeling strategies on imaged time series |
 
-Left: The overall structure of our survey follows the general process of applying vision models for time series analysis, as delineated in Fig 1. 
+The overall structure of our survey follows the general process of applying vision models for time series analysis as delineated in Figure 1. Based on the proposed dual view taxonomy, primary imaging methods on time series and imaged modelling solutions, as shown in Figure 2, are reviewed in this survey, followed by the discussion including pre- & post- processing for time series recovery and future directions in this promising field.
 
-
+***
+### Taxonomy
 Taxonomy are proposed as a dual view of *Time Series to Image Transformation* and *Imaged Time Series Modeling*. For the former, primary methods for imaging UTS or MTS are described and remarked on their pros and cons. For the latter, the existing methods are classified by conventional vision models, LVMs and LMMs. 
+
+#### Image Transformation of Time Series
+
+
+#### 
 
 
 
@@ -40,3 +46,7 @@ pip install time2img
 Our code compatible with all common benchmarks found in [Google Drive](https://drive.google.com/drive/folders/1ZOYpTUa82_jCcxIdTmyr0LXQfvaM9vIy). You can run [example](./src/main.py) to reproduce our illustration of different time series imaging methods from our paper. 
 
 ![Time Series Imaging](./fig/image_plot.png)
+
+
+***
+### Citation
