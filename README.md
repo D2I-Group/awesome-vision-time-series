@@ -29,30 +29,46 @@ Taxonomy are proposed as a dual view of *Time Series to Image Transformation* an
 
 #### Image Transformation of Time Series
 
-<sub>The top panel includes single-modal models. The bottom panel includes multi-modal models. TS-Type denotes type of time series. TS-Recover denotes recovering time series from predicted images. </sub> $*$<sub>: the method has been used to model the individual UTSs of an MTS. </sub>$^{\natural}$ <sub>: a new pre-trained model was proposed in the work.</sub> $^{\flat}$ <sub>: when pre-trained models were unused, Fine-tune refers to train a task-specific model from scratch. </sub>
-
-
+<sub>TS-Recover denotes recovering time series from predicted images. </sub> $*$<sub>: the method has been used to model the individual UTSs of an MTS. </sub>$^{\natural}$ <sub>: a new pre-trained model was proposed in the work.</sub> $^{\flat}$ <sub>: when pre-trained models were unused, Fine-tune refers to train a task-specific model from scratch. </sub>
 
 Method|TS-Type|Imaging|Multimodal|Model|Pre-trained|Fine-tune|Prompt|TS-Recover|Task|Domain
 :-----|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:--:|
-<sub>Time series classification using compression distance of recurrence plots [[paper]()] </sub>|UTS|RP|✘|K-NN|✘|✘|✘|✘|Classification|General
-<sub>Encoding time series as images for visual inspection and classification using tiled convolutional neural networks [[paper]()] </sub>
-<sub>Imaging time-series to improve classification and imputation [[paper]()]</sub>
-<small></small>
-<small></small>
-<small></small>
-<small></small>
-<small></small>
-<small></small>
-<small></small>
-<small></small>
-<small></small>
-<small></small>
-<small></small>
-<small></small>
-<small></small>
-<small></small>
-
+<sub>Time series classification using compression distance of recurrence plots [[paper]()] </sub>|<sub>UTS</sub>|<sub>RP</sub>|<sub>✘</sub>|<sub>K-NN</sub>|<sub>✘</sub>|<sub>✘</sub>|<sub>✘</sub>|<sub>✘</sub>|<sub>Classification</sub>|<sub>General
+<sub>Encoding time series as images for visual inspection and classification using tiled convolutional neural networks [[paper]()] </sub>|<sub>UTS</sub>|<sub>GAF</sub>|<sub>✘</sub>|<sub>CNN</sub>|<sub>✘</sub>|<sub>✔</sub>${\flat}$|<sub>✘</sub>|<sub>✘</sub>|<sub>Classification</sub>|<sub>General
+<sub>Imaging time-series to improve classification and imputation [[paper]()] </sub>|<sub>UTS</sub>|<sub>RP</sub>|<sub>✘</sub>|<sub>K-NN</sub>|<sub>✘</sub>|<sub>✘</sub>|<sub>✘</sub>|<sub>✘</sub>|<sub>Classification</sub>|<sub>General
+<sub>Learning traffic as images: A deep convolutional neural network for large-scale transportation network speed prediction [[paper]()] </sub>|<sub>UTS</sub>|<sub>RP</sub>|<sub>✘</sub>|<sub>K-NN</sub>|<sub>✘</sub>|<sub>✘</sub>|<sub>✘</sub>|<sub>✘</sub>|<sub>Classification</sub>|<sub>General
+<sub>Classification of time-series images using deep convolutional neural networks [[paper]()] </sub>|<sub>UTS</sub>|<sub>RP</sub>|<sub>✘</sub>|<sub>K-NN</sub>|<sub>✘</sub>|<sub>✘</sub>|<sub>✘</sub>|<sub>✘</sub>|<sub>Classification</sub>|<sub>General
+<sub>Multivariate time series classification using dilated convolutional neural network [[paper]()] </sub>|<sub>UTS</sub>|<sub>RP</sub>|<sub>✘</sub>|<sub>K-NN</sub>|<sub>✘</sub>|<sub>✘</sub>|<sub>✘</sub>|<sub>✘</sub>|<sub>Classification</sub>|<sub>General
+<sub>MSCRED [[paper]()] </sub>|<sub>UTS</sub>|<sub>RP</sub>|<sub>✘</sub>|<sub>K-NN</sub>|<sub>✘</sub>|<sub>✘</sub>|<sub>✘</sub>|<sub>✘</sub>|<sub>Classification</sub>|<sub>General
+<sub>Forecasting with time series imaging [[paper]()] </sub>|<sub>UTS</sub>|<sub>RP</sub>|<sub>✘</sub>|<sub>K-NN</sub>|<sub>✘</sub>|<sub>✘</sub>|<sub>✘</sub>|<sub>✘</sub>|<sub>Classification</sub>|<sub>General
+<sub>Trading via image classification [[paper]()] </sub>|<sub>UTS</sub>|<sub>RP</sub>|<sub>✘</sub>|<sub>K-NN</sub>|<sub>✘</sub>|<sub>✘</sub>|<sub>✘</sub>|<sub>✘</sub>|<sub>Classification</sub>|<sub>General
+<sub>Image processing tools for financial time series classification [[paper]()] </sub>|<sub>UTS</sub>|<sub>RP</sub>|<sub>✘</sub>|<sub>K-NN</sub>|<sub>✘</sub>|<sub>✘</sub>|<sub>✘</sub>|<sub>✘</sub>|<sub>Classification</sub>|<sub>General
+<sub>Deep learning and time series-to-image encoding for financial forecasting [[paper]()] </sub>|<sub>UTS</sub>|<sub>RP</sub>|<sub>✘</sub>|<sub>K-NN</sub>|<sub>✘</sub>|<sub>✘</sub>|<sub>✘</sub>|<sub>✘</sub>|<sub>Classification</sub>|<sub>General
+<sub>VisualAE [[paper]()] </sub>|<sub>UTS</sub>|<sub>RP</sub>|<sub>✘</sub>|<sub>K-NN</sub>|<sub>✘</sub>|<sub>✘</sub>|<sub>✘</sub>|<sub>✘</sub>|<sub>Classification</sub>|<sub>General
+<sub>Deep video prediction for time series forecasting [[paper]()] </sub>|<sub>UTS</sub>|<sub>RP</sub>|<sub>✘</sub>|<sub>K-NN</sub>|<sub>✘</sub>|<sub>✘</sub>|<sub>✘</sub>|<sub>✘</sub>|<sub>Classification</sub>|<sub>General
+<sub>AST [[paper]()] </sub>|<sub>UTS</sub>|<sub>RP</sub>|<sub>✘</sub>|<sub>K-NN</sub>|<sub>✘</sub>|<sub>✘</sub>|<sub>✘</sub>|<sub>✘</sub>|<sub>Classification</sub>|<sub>General
+<sub>SSAST [[paper]()] </sub>|<sub>UTS</sub>|<sub>RP</sub>|<sub>✘</sub>|<sub>K-NN</sub>|<sub>✘</sub>|<sub>✘</sub>|<sub>✘</sub>|<sub>✘</sub>|<sub>Classification</sub>|<sub>General
+<sub>MAE-AST [[paper]()] </sub>|<sub>UTS</sub>|<sub>RP</sub>|<sub>✘</sub>|<sub>K-NN</sub>|<sub>✘</sub>|<sub>✘</sub>|<sub>✘</sub>|<sub>✘</sub>|<sub>Classification</sub>|<sub>General
+<sub>AST-SED [[paper]()] </sub>|<sub>UTS</sub>|<sub>RP</sub>|<sub>✘</sub>|<sub>K-NN</sub>|<sub>✘</sub>|<sub>✘</sub>|<sub>✘</sub>|<sub>✘</sub>|<sub>Classification</sub>|<sub>General
+<sub>Classification of time series as images using deep convolutional neural networks: application to glitches in gravitational wave data [[paper]()] </sub>|<sub>UTS</sub>|<sub>RP</sub>|<sub>✘</sub>|<sub>K-NN</sub>|<sub>✘</sub>|<sub>✘</sub>|<sub>✘</sub>|<sub>✘</sub>|<sub>Classification</sub>|<sub>General
+<sub>ForCNN [[paper]()] </sub>|<sub>UTS</sub>|<sub>RP</sub>|<sub>✘</sub>|<sub>K-NN</sub>|<sub>✘</sub>|<sub>✘</sub>|<sub>✘</sub>|<sub>✘</sub>|<sub>Classification</sub>|<sub>General
+<sub>Vit-num-spec [[paper]()] </sub>|<sub>UTS</sub>|<sub>RP</sub>|<sub>✘</sub>|<sub>K-NN</sub>|<sub>✘</sub>|<sub>✘</sub>|<sub>✘</sub>|<sub>✘</sub>|<sub>Classification</sub>|<sub>General
+<sub>ViTST [[paper]()] </sub>|<sub>UTS</sub>|<sub>RP</sub>|<sub>✘</sub>|<sub>K-NN</sub>|<sub>✘</sub>|<sub>✘</sub>|<sub>✘</sub>|<sub>✘</sub>|<sub>Classification</sub>|<sub>General
+<sub>MV-DTSA [[paper]()] </sub>|<sub>UTS</sub>|<sub>RP</sub>|<sub>✘</sub>|<sub>K-NN</sub>|<sub>✘</sub>|<sub>✘</sub>|<sub>✘</sub>|<sub>✘</sub>|<sub>Classification</sub>|<sub>General
+<sub>TimesNet [[paper]()] </sub>|<sub>UTS</sub>|<sub>RP</sub>|<sub>✘</sub>|<sub>K-NN</sub>|<sub>✘</sub>|<sub>✘</sub>|<sub>✘</sub>|<sub>✘</sub>|<sub>Classification</sub>|<sub>General
+<sub>HCR-AdaAD [[paper]()] </sub>|<sub>UTS</sub>|<sub>RP</sub>|<sub>✘</sub>|<sub>K-NN</sub>|<sub>✘</sub>|<sub>✘</sub>|<sub>✘</sub>|<sub>✘</sub>|<sub>Classification</sub>|<sub>General
+<sub>FIRTS [[paper]()] </sub>|<sub>UTS</sub>|<sub>RP</sub>|<sub>✘</sub>|<sub>K-NN</sub>|<sub>✘</sub>|<sub>✘</sub>|<sub>✘</sub>|<sub>✘</sub>|<sub>Classification</sub>|<sub>General
+<sub>CAFO [[paper]()] </sub>|<sub>UTS</sub>|<sub>RP</sub>|<sub>✘</sub>|<sub>K-NN</sub>|<sub>✘</sub>|<sub>✘</sub>|<sub>✘</sub>|<sub>✘</sub>|<sub>Classification</sub>|<sub>General
+<sub>ViTime [[paper]()] </sub>|<sub>UTS</sub>|<sub>RP</sub>|<sub>✘</sub>|<sub>K-NN</sub>|<sub>✘</sub>|<sub>✘</sub>|<sub>✘</sub>|<sub>✘</sub>|<sub>Classification</sub>|<sub>General
+<sub>ImagenTime [[paper]()] </sub>|<sub>UTS</sub>|<sub>RP</sub>|<sub>✘</sub>|<sub>K-NN</sub>|<sub>✘</sub>|<sub>✘</sub>|<sub>✘</sub>|<sub>✘</sub>|<sub>Classification</sub>|<sub>General
+<sub>TimEHR [[paper]()] </sub>|<sub>UTS</sub>|<sub>RP</sub>|<sub>✘</sub>|<sub>K-NN</sub>|<sub>✘</sub>|<sub>✘</sub>|<sub>✘</sub>|<sub>✘</sub>|<sub>Classification</sub>|<sub>General
+<sub>VisionTS [[paper]()] </sub>|<sub>UTS</sub>|<sub>RP</sub>|<sub>✘</sub>|<sub>K-NN</sub>|<sub>✘</sub>|<sub>✘</sub>|<sub>✘</sub>|<sub>✘</sub>|<sub>Classification</sub>|<sub>General
+<sub>InsightMiner [[paper]()] </sub>|<sub>UTS</sub>|<sub>RP</sub>|<sub>✘</sub>|<sub>K-NN</sub>|<sub>✘</sub>|<sub>✘</sub>|<sub>✘</sub>|<sub>✘</sub>|<sub>Classification</sub>|<sub>General
+<sub>Leveraging vision-language models for granular market change prediction [[paper]()] </sub>|<sub>UTS</sub>|<sub>RP</sub>|<sub>✘</sub>|<sub>K-NN</sub>|<sub>✘</sub>|<sub>✘</sub>|<sub>✘</sub>|<sub>✘</sub>|<sub>Classification</sub>|<sub>General
+<sub>Vision language models are few-shot audio spectrogram classifiers [[paper]()] </sub>|<sub>UTS</sub>|<sub>RP</sub>|<sub>✘</sub>|<sub>K-NN</sub>|<sub>✘</sub>|<sub>✘</sub>|<sub>✘</sub>|<sub>✘</sub>|<sub>Classification</sub>|<sub>General
+<sub>Plots unlock time-series understanding in multimodal models [[paper]()] </sub>|<sub>UTS</sub>|<sub>RP</sub>|<sub>✘</sub>|<sub>K-NN</sub>|<sub>✘</sub>|<sub>✘</sub>|<sub>✘</sub>|<sub>✘</sub>|<sub>Classification</sub>|<sub>General
+<sub>TAMA [[paper]()] </sub>|<sub>UTS</sub>|<sub>RP</sub>|<sub>✘</sub>|<sub>K-NN</sub>|<sub>✘</sub>|<sub>✘</sub>|<sub>✘</sub>|<sub>✘</sub>|<sub>Classification</sub>|<sub>General
+<sub>On the feasibility of vision-language models for time-series classification [[paper]()] </sub>|<sub>UTS</sub>|<sub>RP</sub>|<sub>✘</sub>|<sub>K-NN</sub>|<sub>✘</sub>|<sub>✘</sub>|<sub>✘</sub>|<sub>✘</sub>|<sub>Classification</sub>|<sub>General
 
 
 
