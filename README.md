@@ -25,14 +25,23 @@ This repository is under active maintenance by [Ziming Zhao](https://zhziming.gi
 ### Contribution
 Resulting from the the discrepancy between continuous time series and the discrete token space of LLMs, and the challenges in explicitly modeling the correlations of variates in MTS, research attentions have shifted to LVMs and VLMs for time series analysis. To fill the blank in the existing literature, this survey discusses the advantages of vision models over LLMs in time series analysis.
 
+
+
 <div align="center">
 
 
 |[<img src="./fig/structure.png" width="450"/>](./fig/structure.png)|
 |:--:| 
 |Figure 1: The general process of leveraging vision models for time series analysis|
+</div>
 
 
+<div align="center">
+
+
+|[<img src="./fig/image_plot.png" width="450"/>](./fig/image_plot.png)|
+|:--:| 
+|Figure 2: Image Transformation of Time Series|
 </div>
 
 
@@ -41,11 +50,11 @@ Resulting from the the discrepancy between continuous time series and the discre
 
 |[<img src="./fig/Pipeline.png" width="450"/>](./fig/Pipeline.png)|
 |:--:| 
-|Figure 2: Illustration of different modeling strategies on imaged time series |
+|Figure 3: Illustration of different modeling strategies on imaged time series |
 </div>
 
 
-The overall structure of our survey follows the general process of applying vision models for time series analysis as delineated in Figure 1. Based on the proposed dual view taxonomy, primary imaging methods on time series and imaged modelling solutions shown in Figure 2, are reviewed in this survey, followed by the discussion including pre- & post- processing for time series recovery and future directions in this promising field.
+The overall structure of our survey follows the general process of applying vision models for time series analysis as delineated in Figure 1. Based on the proposed dual view taxonomy, primary imaging methods on time series and imaged modelling solutions shown in Figure 3, are reviewed in this survey, followed by the discussion including pre- & post- processing for time series recovery and future directions in this promising field.
 
 ***
 ### Taxonomy
@@ -161,9 +170,7 @@ We have uploaded our code to package to PyPI, run the following command for inst
 pip install time2img
 ```
 
-Our code compatible with all common benchmarks found in [Google Drive](https://drive.google.com/drive/folders/1ZOYpTUa82_jCcxIdTmyr0LXQfvaM9vIy). You can run [example](./src/main.py) to reproduce our illustration of different time series imaging methods from our paper. 
-
-![Time Series Imaging](./fig/image_plot.png)
+Our code compatible with all common benchmarks found in [Google Drive](https://drive.google.com/drive/folders/1ZOYpTUa82_jCcxIdTmyr0LXQfvaM9vIy). You can run [example](./src/main.py) to reproduce our illustration of different time series imaging methods (Figure 2) from our paper. 
 
 
 ***
