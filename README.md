@@ -39,7 +39,7 @@ Resulting from the the discrepancy between continuous time series and the discre
 <div align="center">
 
 
-|[<img src="./fig/image_plot.png" width="450"/>](./fig/image_plot.png)|
+|[<img src="./fig/image_plot.png" width="550"/>](./fig/image_plot.png)|
 |:--:| 
 |Figure 2: Image Transformation of Time Series|
 </div>
