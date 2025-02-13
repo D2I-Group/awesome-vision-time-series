@@ -28,7 +28,7 @@ Resulting from the the discrepancy between continuous time series and the discre
 <div align="center">
 
 
-|[<img src="./fig/structure.png" width="400"/>](./fig/structure.png)|
+|[<img src="./fig/structure.png" width="450"/>](./fig/structure.png)|
 |:--:| 
 |Figure 1: The general process of leveraging vision models for time series analysis|
 
@@ -37,9 +37,13 @@ Resulting from the the discrepancy between continuous time series and the discre
 
 
 
-|[<img src="./fig/Pipeline.png" width="3000"/>](./fig/Pipeline.png)|
+<div align="center">
+
+|[<img src="./fig/Pipeline.png" width="450"/>](./fig/Pipeline.png)|
 |:--:| 
 |Figure 2: Illustration of different modeling strategies on imaged time series |
+</div>
+
 
 The overall structure of our survey follows the general process of applying vision models for time series analysis as delineated in Figure 1. Based on the proposed dual view taxonomy, primary imaging methods on time series and imaged modelling solutions shown in Figure 2, are reviewed in this survey, followed by the discussion including pre- & post- processing for time series recovery and future directions in this promising field.
 
