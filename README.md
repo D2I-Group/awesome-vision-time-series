@@ -6,7 +6,7 @@
 ![PRs Welcome](https://img.shields.io/badge/PRs-Welcome-green)
 [![arXiv](https://img.shields.io/badge/arXiv-2502.08869-b31b1b.svg)](https://www.arxiv.org/abs/2502.08869)
 [![PyPI - Version](https://img.shields.io/pypi/v/version)](#package)
-[![Visits Badge](https://badges.pufler.dev/visits/D2I-Group/awesome-vision-time-series)](https://badges.pufler.dev/visits/D2I-Group/awesome-vision-time-series)
+[![Visits Badge](https://badges.pufler.dev/visits/D2I-Group/awesome-vision-time-series)](https://badges.pufler.dev)
 </div>
 
 
