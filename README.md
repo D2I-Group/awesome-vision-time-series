@@ -1,16 +1,16 @@
 <div align="center">
 
 
-# Awesome Vision Models for Time Series
-[![Awesome](https://awesome.re/badge.svg)](https://awesome.re) 
-[![Paper](https://img.shields.io/badge/paper-leave--red)](https://www.overleaf.com/project/677f07201833b1a0ba012653)
+# Awesome Vision Models for Time Series Analysis
+[![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
+![PRs Welcome](https://img.shields.io/badge/PRs-Welcome-green)
+[![arXiv](https://img.shields.io/badge/arXiv-2502.08869-b31b1b.svg)](https://www.arxiv.org/abs/2502.08869)
 [![PyPI - Version](https://img.shields.io/pypi/v/version)](#package)
+[![Visits Badge](https://badges.pufler.dev/visits/D2I-Group/awesome-vision-time-series)](https://badges.pufler.dev/visits/D2I-Group/awesome-vision-time-series)
 </div>
 
 
-This repository tracks the latest paper on "Vision Model for Time series Analysis" and serves as the official repo for [Harnessing Vision Models for Time Series Analysis: A Survey](https://www.overleaf.com/project/677f07201833b1a0ba012653)
-
-This repository is under active maintenance by [Ziming Zhao](https://zhziming.github.io/) from **D2I Group@UH** led by [Dr.JingChao Ni](https://nijingchao.github.io/).
+This repository tracks the latest paper on Vision Models for Time series Analysis and serves as the official repository for [Harnessing Vision Models for Time Series Analysis: A Survey](https://www.arxiv.org/abs/2502.08869). This repository is actively maintained by **D2I Group@UH**. We will update our reposititory and survey regularly.
 
 <p align="center">
     🏆&nbsp;<a href="#contribution">Contribution</a>
@@ -23,9 +23,8 @@ This repository is under active maintenance by [Ziming Zhao](https://zhziming.gi
 ***
 
 ### Contribution
-Resulting from the the discrepancy between continuous time series and the discrete token space of LLMs, and the challenges in explicitly modeling the correlations of variates in MTS, research attentions have shifted to LVMs and VLMs for time series analysis. To fill the blank in the existing literature, this survey discusses the advantages of vision models over LLMs in time series analysis.
 
-
+Time series analysis has witnessed the inspiring development from traditional autoregressive models, deep learning models, to recent Transformers and Large Language Models (LLMs). Efforts in leveraging vision models for time series analysis have also been made along the way but are less visible to the community due to the predominant research on sequence modeling in this domain. However, the discrepancy between continuous time series and the discrete token space of LLMs, and the challenges in explicitly modeling the correlations of variates in multivariate time series have shifted some research attentions to the equally successful Large Vision Models (LVMs) and Vision Language Models (VLMs). To fill the blank in the existing literature, this survey discusses the advantages of vision models over LLMs in time series analysis and provides a comprehensive and in-depth overview of the existing methods.
 
 <div align="center">
 
@@ -54,11 +53,11 @@ Resulting from the the discrepancy between continuous time series and the discre
 </div>
 
 
-The overall structure of our survey follows the general process of applying vision models for time series analysis as delineated in Figure 1. Based on the proposed dual view taxonomy, primary imaging methods on time series and imaged modelling solutions shown in Figure 3, are reviewed in this survey, followed by the discussion including pre- & post- processing for time series recovery and future directions in this promising field.
+The overall structure of our survey follows the general process of applying vision models for time series analysis as delineated in Figure 1. Based on the proposed dual view taxonomy, primary imaging methods on time series in Figure 2 and imaged modelling solutions in Figure 3, are reviewed in this survey, followed by the discussion including pre- & post-processing involved in this framework and future directions in this promising field.
 
 ***
 ### Taxonomy
-Taxonomy are proposed as a dual view of *Time Series to Image Transformation* and *Imaged Time Series Modeling*. For the former, primary methods for imaging UTS or MTS are described and remarked on their pros and cons. For the latter, the existing methods are classified by conventional vision models, LVMs and LMMs.
+Taxonomy are proposed as a dual view of *Time Series to Image Transformation* and *Imaged Time Series Modeling*. For the former, primary methods for imaging UTS or MTS are described and remarked on their pros and cons. For the latter, the existing methods are classified by conventional vision models, Large Vision Models (LVMs) and Large Multimodal Models (LMMs).
 
 #### Image Transformation of Time Series
 
@@ -175,3 +174,12 @@ Our code compatible with all common benchmarks found in [Google Drive](https://d
 
 ***
 ### Citation
+
+```
+@article{ni2025harnessing,
+  title={Harnessing Vision Models for Time Series Analysis: A Survey},
+  author={Ni, Jingchao and Zhao, Ziming and Shen, ChengAo and Tong, Hanghang and Song, Dongjin and Cheng, Wei and Luo, Dongsheng and Chen, Haifeng},
+  journal={arXiv preprint arXiv:2502.08869},
+  year={2025}
+}
+```
