@@ -6,7 +6,6 @@
 ![PRs Welcome](https://img.shields.io/badge/PRs-Welcome-green)
 [![arXiv](https://img.shields.io/badge/arXiv-2502.08869-b31b1b.svg)](https://www.arxiv.org/abs/2502.08869)
 [![PyPI - Version](https://img.shields.io/pypi/v/version)](#package)
-[![Visits Badge](https://badges.pufler.dev/visits/D2I-Group/awesome-vision-time-series)](https://badges.pufler.dev)
 </div>
 
 
@@ -97,7 +96,9 @@ Taxonomy are proposed as a dual view of *Time Series to Image Transformation* an
 * [2017] (Traffic) Learning Traffic as Images: A Deep Convolutional Neural Network for Large-scale Transportation Network Speed Prediction [[paper](https://arxiv.org/abs/1701.04245)]
 * [2015] (Genearl) Imaging Time-series to Improve Classification and Imputation [[paper](https://arxiv.org/abs/1506.00327)]
 * [2015] (General) Encoding Time Series as Images for Visual Inspection and Classification Using Tiled Convolutional Neural Networks [[paper](https://coral-lab.umbc.edu/wp-content/uploads/2015/05/10179-43348-1-SM1.pdf)]
+* [2014] (General) Extracting Texture Features for Time Series Classification [[paper](https://ieeexplore.ieee.org/document/6976964)]
 * [2013] (General) Time Series Classification Using Compression Distance of Recurrence [[paper](https://ieeexplore.ieee.org/document/6729553)]
+* [2005] (General) Time-series Bitmaps: a Practical Visualization Tool for Working with Large Time Series Databases [[paper](https://epubs.siam.org/doi/abs/10.1137/1.9781611972757.55)]
 
 
 <!-- #### Image Transformation of Time Series
@@ -160,7 +161,9 @@ Taxonomy are proposed as a dual view of *Time Series to Image Transformation* an
 
 Method|TS-Type|Imaging|Multimodal|Model|Pre-trained|Fine-tune|Prompt|TS-Recover|Task|Domain|Code
 :-----|:---------:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:--:|:--:
+[Kumar et al., 2005](https://epubs.siam.org/doi/abs/10.1137/1.9781611972757.55)|UTS|TS-Bitmap|✘|Multiple|✘|✘|✘|✘|Multiple|General|✘
 [Silva et al., 2013](https://ieeexplore.ieee.org/document/6729553)|UTS|RP|✘|K-NN|✘|✘|✘|✘|Classification|General|✘
+[Souza et al., 2014](https://ieeexplore.ieee.org/document/6976964) |UTS|RP|✘|SVM|✘|$✔^\flat$|✘|✘|Classification|General|✘
 [Wang and Oates, 2015a](https://coral-lab.umbc.edu/wp-content/uploads/2015/05/10179-43348-1-SM1.pdf) |UTS|GAF|✘|CNN|✘|$✔^\flat$|✘|$✔$|Classification|General|✘
 [Wang and Oates, 2015b](https://arxiv.org/abs/1506.00327) |UTS|GAF|✘|CNN|✘|$✔^\flat$|✘|$✔$|Classification & Imputation|General|✘
 [Ma et al., 2017](https://arxiv.org/abs/1701.04245) |MTS|Heatmap|✘|CNN|✘|$✔^\flat$|✘|$✔$|Forecasting|Traffic|✘
