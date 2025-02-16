@@ -55,6 +55,16 @@ Time series analysis has witnessed the inspiring development from traditional au
 The overall structure of our survey follows the general process of applying vision models for time series analysis as delineated in Figure 1. Based on the proposed dual view taxonomy, primary imaging methods on time series in Figure 2 and imaged modelling solutions in Figure 3, are reviewed in this survey, followed by the discussion including pre- & post-processing involved in this framework and future directions in this promising field.
 
 ***
+### Package
+
+This package provides the common visualization methods for time series, including Line Plot, Heatmap, Spectrogram (STFT, Wavelet Transform, Filterbank), GAP and RP. We have uploaded our code package to PyPI, run the following command for installation.
+
+```bash
+pip install time2img
+```
+Our code is compatible with all common benchmarks found in [Google Drive](https://drive.google.com/drive/folders/1ZOYpTUa82_jCcxIdTmyr0LXQfvaM9vIy). You can run [example](./src/main.py) to reproduce our illustration of different time series imaging methods (Figure 2) in the [paper](https://www.arxiv.org/abs/2502.08869).
+
+***
 ### Taxonomy
 Taxonomy are proposed as a dual view of *Time Series to Image Transformation* and *Imaged Time Series Modeling*. For the former, primary methods for imaging UTS or MTS are described and remarked on their pros and cons. For the latter, the existing methods are classified by conventional vision models, Large Vision Models (LVMs) and Large Multimodal Models (LMMs).
 
@@ -201,20 +211,6 @@ Method|TS-Type|Imaging|Multimodal|Model|Pre-trained|Fine-tune|Prompt|TS-Recover|
 [Daswani et al., 2024](https://arxiv.org/abs/2410.02637) |MTS|LinePlot|$✔$|GPT4o, Gemini|$✔$|✘|$✔$|✘|Multiple|General|✘
 [TAMA](https://arxiv.org/abs/2411.02465) |UTS|LinePlot|$✔$|GPT4o|$✔$|✘|$✔$|✘|Anomaly|General|✘
 [Prithyani et al., 2024](https://arxiv.org/abs/2412.17304) |MTS|LinePlot|$✔$|LLaVA|$✔$|$✔$|$✔$|✘|Classification|General|[✔](https://github.com/vinayp17/VLM_TSC)
-
-
-
-***
-### Package
-
-We have uploaded our code to package to PyPI, run the following command for installation.
-
-```bash
-pip install time2img
-```
-
-Our code compatible with all common benchmarks found in [Google Drive](https://drive.google.com/drive/folders/1ZOYpTUa82_jCcxIdTmyr0LXQfvaM9vIy). You can run [example](./src/main.py) to reproduce our illustration of different time series imaging methods (Figure 2) from our paper. 
-
 
 ***
 ### Citation
