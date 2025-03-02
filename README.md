@@ -25,6 +25,8 @@ This repository tracks the latest paper on Vision Models for Time series Analysi
 
 Time series analysis has witnessed the inspiring development from traditional autoregressive models, deep learning models, to recent Transformers and Large Language Models (LLMs). Efforts in leveraging vision models for time series analysis have also been made along the way but are less visible to the community due to the predominant research on sequence modeling in this domain. However, the discrepancy between continuous time series and the discrete token space of LLMs, and the challenges in explicitly modeling the correlations of variates in multivariate time series have shifted some research attentions to the equally successful Large Vision Models (LVMs) and Vision Language Models (VLMs). To fill the blank in the existing literature, this survey discusses the advantages of vision models over LLMs in time series analysis and provides a comprehensive and in-depth overview of the existing methods.
 
+Taxonomy are proposed as a dual view of *Time Series to Image Transformation* and *Imaged Time Series Modeling*. For the former, primary methods for imaging UTS or MTS are described and remarked on their pros and cons. For the latter, the existing methods are classified by conventional vision models, Large Vision Models (LVMs) and Large Multimodal Models (LMMs).
+
 <div align="center">
 
 
@@ -65,50 +67,59 @@ pip install time2img
 Our code is compatible with all common benchmarks found in [Google Drive](https://drive.google.com/drive/folders/1ZOYpTUa82_jCcxIdTmyr0LXQfvaM9vIy). You can run [example](./src/main.py) to reproduce our illustration of different time series imaging methods (Figure 2) in the [paper](https://www.arxiv.org/abs/2502.08869).
 
 ***
-### Taxonomy
-Taxonomy are proposed as a dual view of *Time Series to Image Transformation* and *Imaged Time Series Modeling*. For the former, primary methods for imaging UTS or MTS are described and remarked on their pros and cons. For the latter, the existing methods are classified by conventional vision models, Large Vision Models (LVMs) and Large Multimodal Models (LMMs).
+### List of Papers
 
-* [2025] (General) Time-VLM: Exploring Multimodal Vision-Language Models for Augmented Time Series Forecasting [[paper](https://arxiv.org/abs/2502.04395)]
-* [2024] (General) VisionTS: Visual masked autoencoders are free-lunch zero-shot time series forecasters [[paper](https://arxiv.org/abs/2408.17253)][[code](https://github.com/Keytoyze/VisionTS)]
-* [2024] (General) CAFO: Feature-centric explanation on time series classification [[paper](https://arxiv.org/abs/2406.01833)][[code](https://github.com/eai-lab/CAFO)]
-* [2024] (Sensing) Multi-sensor data fusion and time series to image encoding for hardness recognition [[paper](https://ieeexplore.ieee.org/document/10600105)]
-* [2024] (General) Utilizing image transforms and diffusion models for generative modeling of short and long time series [[paper](https://arxiv.org/abs/2410.19538)][[code]](https://github.com/azencot-group/ImagenTime)
-* [2024] (General) Hierarchical context representation and self-adaptive thresholding for multivariate anomaly detection [[paper](https://ieeexplore.ieee.org/document/10417809)]
-* [2024] (General) Fusion of image representations for time series classification with deep learning [[paper](https://link.springer.com/chapter/10.1007/978-3-031-72347-6_16)][[code](https://sites.google.com/view/firts-paper)]
-* [2024] (Audio) Vision language models are few-shot audio spectrogram classifiers [[paper](https://arxiv.org/abs/2411.12058)]
-* [2024] (General) Training-free time-series anomaly detection: Leveraging image foundation models [[paper](https://arxiv.org/abs/2408.14756)]
-* [2024] (General) On the feasibility of vision-language models for time-series classification [[paper](https://arxiv.org/abs/2412.17304)][[code](https://github.com/vinayp17/VLM_TSC)]
-* [2024] (General) See it, think it, sorted: Large multimodal models are few-shot time series anomaly analyzers [[paper](https://arxiv.org/abs/2411.02465)]
-* [2024] (General) Plots unlock time-series understanding in multimodal models [[paper](https://arxiv.org/abs/2410.02637)]
-* [2024] (General) ViTime: A visual intelligence-based foundation model for time series forecasting [[paper](https://arxiv.org/abs/2407.07311)][[code]](https://github.com/IkeYang/ViTime)
-* [2024] (Health) TimEHR: Image-based time series generation for electronic health records [[paper](https://arxiv.org/abs/2402.06318)][[code](https://github.com/esl-epfl/TimEHR)]
-* [2023] (General) TimesNet: Temporal 2d-variation modeling for general time series analysis [[paper](https://arxiv.org/abs/2210.02186)][[code](https://github.com/thuml/TimesNet)]
-* [2023] (General) Insight miner: A time series analysis dataset for cross-domain alignment with natural language [[paper](https://openreview.net/pdf?id=E1khscdUdH)]
-* [2023] (Finance) Leveraging vision-language models for granular market change prediction [[paper](https://arxiv.org/abs/2301.10166)]
-* [2023] (General) Time series as images: Vision transformer for irregularly sampled time series [[paper](https://arxiv.org/abs/2303.12799)][[code](https://github.com/Leezekun/ViTST)]
-* [2023] (General) Your time series is worth a binary image: machine vision assisted deep framework for time series forecasting [[paper](https://arxiv.org/abs/2302.14390)][[code](https://github.com/IkeYang/machine-vision-assisted-deep-time-series-analysis-MV-DTSA-)]
-* [2023] (General) Image-based time series forecasting: A deep convolutional neural network approach [[paper](https://www.sciencedirect.com/science/article/abs/pii/S0893608022003902)]
-* [2023] (Physics) Classification of time series as images using deep convolutional neural networks: application to glitches in gravitational wave data [[paper](https://par.nsf.gov/servlets/purl/10411304)]
-* [2023] (Finance) From pixels to predictions: Spectrogram and vision transformer for better time series forecasting [[paper](https://arxiv.org/abs/2403.11047)]
-* [2023] (Audio) AST-SED: An effective sound event detection method based on audio spectrogram transformer [[paper](https://arxiv.org/abs/2303.03689)]
-* [2022] (Health) TTS-GAN: A transformer-based time-series generative adversarial network [[paper](https://arxiv.org/abs/2202.02691)][[code](https://github.com/imics-lab/tts-gan)]
-* [2022] (Audio) MAE-AST: Masked autoencoding audio spectrogram transformer [[paper](https://arxiv.org/abs/2203.16691)][[code](https://github.com/AlanBaade/MAE-AST-Public)]
-* [2022] (Audio) SSAST: Self-supervised audio spectrogram transformer [[paper](https://arxiv.org/abs/2110.09784)][[code](https://github.com/YuanGongND/ssast)]
-* [2021] (Audio) AST: Audio spectrogram transformer [[paper](https://arxiv.org/abs/2104.01778)][[code](https://github.com/YuanGongND/ast)]
-* [2021] (Finance) Visual time series forecasting: an image-driven approach [[paper](https://arxiv.org/abs/2011.09052)]
-* [2021] (Finance) Deep video prediction for time series forecasting [[paper](https://arxiv.org/abs/2102.12061)]
-* [2020] (General) Forecasting with Time Series Imaging [[paper](https://arxiv.org/abs/1904.08064)][[code](https://github.com/lixixibj/forecasting-with-time-series-imaging)]
-* [2020] (Finance) Deep learning and time series-to-image encoding for financial forecasting [[paper](https://ieeexplore.ieee.org/document/9080613)]
-* [2020] (Finance) Trading via image classification [[paper](https://arxiv.org/abs/1907.10046)]
-* [2019] (General) A Deep Neural Network for unsupervised anomaly detection and diagnosis in multivariate time series data [[paper](https://dl.acm.org/doi/10.1609/aaai.v33i01.33011409)][[code](https://github.com/7fantasysz/MSCRED)]
-* [2019] (General) Multivariate time series classification using dilated convolutional neural network [[paper](https://arxiv.org/abs/1905.01697)][[code](https://github.com/SonbolYb/multivariate_timeseries_dilated_conv)]
-* [2018] (General) Classification of Time-series Images using Deep Convolutional Neural Networks [[paper](https://arxiv.org/abs/1710.00886)]
-* [2017] (Traffic) Learning Traffic as Images: A Deep Convolutional Neural Network for Large-scale Transportation Network Speed Prediction [[paper](https://arxiv.org/abs/1701.04245)]
-* [2015] (Genearl) Imaging Time-series to Improve Classification and Imputation [[paper](https://arxiv.org/abs/1506.00327)]
-* [2015] (General) Encoding Time Series as Images for Visual Inspection and Classification Using Tiled Convolutional Neural Networks [[paper](https://coral-lab.umbc.edu/wp-content/uploads/2015/05/10179-43348-1-SM1.pdf)]
-* [2014] (General) Extracting Texture Features for Time Series Classification [[paper](https://ieeexplore.ieee.org/document/6976964)]
-* [2013] (General) Time Series Classification Using Compression Distance of Recurrence [[paper](https://ieeexplore.ieee.org/document/6729553)]
-* [2005] (General) Time-series Bitmaps: a Practical Visualization Tool for Working with Large Time Series Databases [[paper](https://epubs.siam.org/doi/abs/10.1137/1.9781611972757.55)]
+* [2025] Can Multimodal LLMs Perform Time Series Anomaly Detection? [[paper](https://arxiv.org/abs/2502.17812)][[code](https://github.com/mllm-ts/VisualTimeAnomaly)]
+* [2025] Time-VLM: Exploring Multimodal Vision-Language Models for Augmented Time Series Forecasting [[paper](https://arxiv.org/abs/2502.04395)]
+* [2024] VisionTS: Visual masked autoencoders are free-lunch zero-shot time series forecasters [[paper](https://arxiv.org/abs/2408.17253)][[code](https://github.com/Keytoyze/VisionTS)]
+* [2024] CAFO: Feature-centric explanation on time series classification [[paper](https://arxiv.org/abs/2406.01833)][[code](https://github.com/eai-lab/CAFO)]
+* [2024] Multi-sensor data fusion and time series to image encoding for hardness recognition [[paper](https://ieeexplore.ieee.org/document/10600105)]
+* [2024] Utilizing image transforms and diffusion models for generative modeling of short and long time series [[paper](https://arxiv.org/abs/2410.19538)][[code]](https://github.com/azencot-group/ImagenTime)
+* [2024] Hierarchical context representation and self-adaptive thresholding for multivariate anomaly detection [[paper](https://ieeexplore.ieee.org/document/10417809)]
+* [2024] Fusion of image representations for time series classification with deep learning [[paper](https://link.springer.com/chapter/10.1007/978-3-031-72347-6_16)][[code](https://sites.google.com/view/firts-paper)]
+* [2024] Vision language models are few-shot audio spectrogram classifiers [[paper](https://arxiv.org/abs/2411.12058)]
+* [2024] Training-free time-series anomaly detection: Leveraging image foundation models [[paper](https://arxiv.org/abs/2408.14756)]
+* [2024] On the feasibility of vision-language models for time-series classification [[paper](https://arxiv.org/abs/2412.17304)][[code](https://github.com/vinayp17/VLM_TSC)]
+* [2024] See it, think it, sorted: Large multimodal models are few-shot time series anomaly analyzers [[paper](https://arxiv.org/abs/2411.02465)]
+* [2024] Plots unlock time-series understanding in multimodal models [[paper](https://arxiv.org/abs/2410.02637)]
+* [2024] ViTime: A visual intelligence-based foundation model for time series forecasting [[paper](https://arxiv.org/abs/2407.07311)][[code]](https://github.com/IkeYang/ViTime)
+* [2024] TimEHR: Image-based time series generation for electronic health records [[paper](https://arxiv.org/abs/2402.06318)][[code](https://github.com/esl-epfl/TimEHR)]
+* [2024] Quantum-Enhanced Forecasting: Leveraging Quantum Gramian Angular Field and CNNs for Stock Return Predictions [[paper](https://www.sciencedirect.com/science/article/abs/pii/S1544612324008705)][[arxiv](https://arxiv.org/abs/2310.07427)]
+* [2024] EEG channel selection using Gramian Angular Fields and spectrograms for energy data visualization [[paper](https://www.sciencedirect.com/science/article/abs/pii/S0952197624004639)]
+* [2024] ViT2 - Pre-training Vision Transformers for Visual Times Series Forecasting [[paper](https://link.springer.com/chapter/10.1007/978-3-031-78183-4_14)][[code](https://github.com/kochlisGit/VIT2)]
+* [2023] TimesNet: Temporal 2d-variation modeling for general time series analysis [[paper](https://arxiv.org/abs/2210.02186)][[code](https://github.com/thuml/TimesNet)]
+* [2023] Insight miner: A time series analysis dataset for cross-domain alignment with natural language [[paper](https://openreview.net/pdf?id=E1khscdUdH)]
+* [2023] Leveraging vision-language models for granular market change prediction [[paper](https://arxiv.org/abs/2301.10166)]
+* [2023] Time series as images: Vision transformer for irregularly sampled time series [[paper](https://arxiv.org/abs/2303.12799)][[code](https://github.com/Leezekun/ViTST)]
+* [2023] Your time series is worth a binary image: machine vision assisted deep framework for time series forecasting [[paper](https://arxiv.org/abs/2302.14390)][[code](https://github.com/IkeYang/machine-vision-assisted-deep-time-series-analysis-MV-DTSA-)]
+* [2023] Image-based time series forecasting: A deep convolutional neural network approach [[paper](https://www.sciencedirect.com/science/article/abs/pii/S0893608022003902)]
+* [2023] Classification of time series as images using deep convolutional neural networks: application to glitches in gravitational wave data [[paper](https://par.nsf.gov/servlets/purl/10411304)]
+* [2023] From pixels to predictions: Spectrogram and vision transformer for better time series forecasting [[paper](https://arxiv.org/abs/2403.11047)]
+* [2023] AST-SED: An effective sound event detection method based on audio spectrogram transformer [[paper](https://arxiv.org/abs/2303.03689)]
+* [2023] ECG classification using Deep CNN and Gramian Angular Field [[paper](https://ieeexplore.ieee.org/document/10233925)][[arxiv](https://arxiv.org/abs/2308.02395)]
+* [2023] The use of deep learning and 2-D wavelet scalograms for power quality disturbances classification [[paper](https://www.sciencedirect.com/science/article/pii/S0378779622008872)]
+* [2022] Encoding Cardiopulmonary Exercise Testing Time Series as Images for Classification using Convolutional Neural Network [[paper](https://ieeexplore.ieee.org/abstract/document/9871878)][[arxiv](https://arxiv.org/abs/2204.12432)][[code](https://github.com/YashSharma/MultivariateTimeSeries?tab=readme-ov-file)]
+* [2022] Time Series Classification Based on Image Transformation Using Feature Fusion Strategy [[paper](https://link.springer.com/article/10.1007/s11063-022-10783-z)]
+* [2022] TTS-GAN: A transformer-based time-series generative adversarial network [[paper](https://arxiv.org/abs/2202.02691)][[code](https://github.com/imics-lab/tts-gan)]
+* [2022] MAE-AST: Masked autoencoding audio spectrogram transformer [[paper](https://arxiv.org/abs/2203.16691)][[code](https://github.com/AlanBaade/MAE-AST-Public)]
+* [2022] SSAST: Self-supervised audio spectrogram transformer [[paper](https://arxiv.org/abs/2110.09784)][[code](https://github.com/YuanGongND/ssast)]
+* [2021] AST: Audio spectrogram transformer [[paper](https://arxiv.org/abs/2104.01778)][[code](https://github.com/YuanGongND/ast)]
+* [2021] Visual time series forecasting: an image-driven approach [[paper](https://arxiv.org/abs/2011.09052)]
+* [2021] Deep video prediction for time series forecasting [[paper](https://arxiv.org/abs/2102.12061)]
+* [2020] Forecasting with Time Series Imaging [[paper](https://arxiv.org/abs/1904.08064)][[code](https://github.com/lixixibj/forecasting-with-time-series-imaging)]
+* [2020] Deep learning and time series-to-image encoding for financial forecasting [[paper](https://ieeexplore.ieee.org/document/9080613)]
+* [2020] Trading via image classification [[paper](https://arxiv.org/abs/1907.10046)]
+* [2020] A novel ensemble method for hourly residential electricity consumption forecasting by imaging time series [[paper](https://www.sciencedirect.com/science/article/abs/pii/S0360544220309658)]
+* [2020] Human Activity Recognition Based on Gramian Angular Field and Deep Convolutional Neural Network [[paper](https://ieeexplore.ieee.org/document/9234451)]
+* [2019] A Deep Neural Network for unsupervised anomaly detection and diagnosis in multivariate time series data [[paper](https://dl.acm.org/doi/10.1609/aaai.v33i01.33011409)][[code](https://github.com/7fantasysz/MSCRED)]
+* [2019] Multivariate time series classification using dilated convolutional neural network [[paper](https://arxiv.org/abs/1905.01697)][[code](https://github.com/SonbolYb/multivariate_timeseries_dilated_conv)]
+* [2018] Classification of Time-series Images using Deep Convolutional Neural Networks [[paper](https://arxiv.org/abs/1710.00886)]
+* [2017] Learning Traffic as Images: A Deep Convolutional Neural Network for Large-scale Transportation Network Speed Prediction [[paper](https://arxiv.org/abs/1701.04245)]
+* [2015] Imaging Time-series to Improve Classification and Imputation [[paper](https://arxiv.org/abs/1506.00327)]
+* [2015] Encoding Time Series as Images for Visual Inspection and Classification Using Tiled Convolutional Neural Networks [[paper](https://coral-lab.umbc.edu/wp-content/uploads/2015/05/10179-43348-1-SM1.pdf)]
+* [2014] Extracting Texture Features for Time Series Classification [[paper](https://ieeexplore.ieee.org/document/6976964)]
+* [2013] Time Series Classification Using Compression Distance of Recurrence Plots [[paper](https://ieeexplore.ieee.org/document/6729553)]
+* [2005] Time-series Bitmaps: a Practical Visualization Tool for Working with Large Time Series Databases [[paper](https://epubs.siam.org/doi/abs/10.1137/1.9781611972757.55)]
 
 
 <!-- #### Image Transformation of Time Series
@@ -166,6 +177,8 @@ Taxonomy are proposed as a dual view of *Time Series to Image Transformation* an
     - (General) Fusion of image representations for time series classification with deep learning [[paper](https://link.springer.com/chapter/10.1007/978-3-031-72347-6_16)][[code](https://sites.google.com/view/firts-paper)]
     - (General) Utilizing image transforms and diffusion models for generative modeling of short and long time series [[paper](https://arxiv.org/abs/2410.19538)][[code]](https://github.com/azencot-group/ImagenTime) -->
 
+***
+### Taxonomy
 
 <sub>TS-Recover denotes recovering time series from predicted images. </sub> $*$<sub>: the method has been used to model the individual UTSs of an MTS. </sub>$^{\natural}$ <sub>: a new pre-trained model was proposed in the work. </sub>$^{\flat}$ : <sub>when pre-trained models were unused, Fine-tune refers to train a task-specific model from scratch. </sub>
 
