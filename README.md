@@ -1,7 +1,7 @@
 <div align="center">
 
 
-# Awesome Vision Models for Time Series (Vision4TS) Papers
+# Awesome Vision for Time Series (Vision4TS) Papers
 [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
 ![PRs Welcome](https://img.shields.io/badge/PRs-Welcome-green)
 [![arXiv](https://img.shields.io/badge/arXiv-2502.08869-b31b1b.svg)](https://www.arxiv.org/abs/2502.08869)
