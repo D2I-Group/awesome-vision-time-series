@@ -1,7 +1,7 @@
 <div align="center">
 
 
-# Awesome Vision Models for Time Series Analysis
+# Awesome Vision Models for Time Series (Vision4TS) Papers
 [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
 ![PRs Welcome](https://img.shields.io/badge/PRs-Welcome-green)
 [![arXiv](https://img.shields.io/badge/arXiv-2502.08869-b31b1b.svg)](https://www.arxiv.org/abs/2502.08869)
@@ -67,7 +67,13 @@ pip install time2img
 Our code is compatible with all common benchmarks found in [Google Drive](https://drive.google.com/drive/folders/1ZOYpTUa82_jCcxIdTmyr0LXQfvaM9vIy). You can run [example](./src/main.py) to reproduce our illustration of different time series imaging methods (Figure 2) in the [paper](https://www.arxiv.org/abs/2502.08869).
 
 ***
-### List of Papers
+### List of Vision4TS Papers
+
+#### Surveys
+
+* [2025] [Arxiv] Harnessing Vision Models for Time Series Analysis: A Survey [[paper](https://www.arxiv.org/abs/2502.08869)][[code](https://github.com/D2I-Group/awesome-vision-time-series)]
+
+#### Papers
 
 * [2025] [ICLR] TimeMixer++: A General Time Series Pattern Machine for Universal Predictive Analysis [[paper](https://openreview.net/pdf?id=1CLzLXSFNn)][[arxiv](https://arxiv.org/pdf/2410.16032)]
 * [2025] [Arxiv] Can Multimodal LLMs Perform Time Series Anomaly Detection? [[paper](https://arxiv.org/abs/2502.17812)][[code](https://github.com/mllm-ts/VisualTimeAnomaly)]
