@@ -11,6 +11,8 @@
 
 This repository tracks the latest paper on Vision Models for Time series Analysis and serves as the official repository for [Harnessing Vision Models for Time Series Analysis: A Survey](https://www.arxiv.org/abs/2502.08869). This repository is actively maintained by **D2I Group@UH**. We will update our reposititory and survey regularly.
 
+🌟 [News] Our survey paper is accepted by IJCAI 2025 survey track!
+
 <p align="center">
     🏆&nbsp;<a href="#contribution">Contribution</a>
     | 📌&nbsp;<a href="#taxonomy">Taxonomy</a>
