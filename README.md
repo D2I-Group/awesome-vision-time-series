@@ -77,9 +77,12 @@ Our code is compatible with all common benchmarks found in [Google Drive](https:
 
 #### Papers
 
+* [2025] [Arxiv] From Images to Signals: Are Large Vision Models Useful for Time Series Analysis? [[paper](https://arxiv.org/abs/2505.24030)]
+* [2025] [Arxiv] Multi-Modal View Enhanced Large Vision Models for Long-Term Time Series Forecasting [[paper](https://arxiv.org/abs/2505.24003)]
 * [2025] [ICLR] TimeMixer++: A General Time Series Pattern Machine for Universal Predictive Analysis [[paper](https://openreview.net/pdf?id=1CLzLXSFNn)][[arxiv](https://arxiv.org/pdf/2410.16032)]
 * [2025] [Arxiv] Can Multimodal LLMs Perform Time Series Anomaly Detection? [[paper](https://arxiv.org/abs/2502.17812)][[code](https://github.com/mllm-ts/VisualTimeAnomaly)]
-* [2025] [Arxiv] Time-VLM: Exploring Multimodal Vision-Language Models for Augmented Time Series Forecasting [[paper](https://arxiv.org/abs/2502.04395)]
+* [2025] [ICML] Time-VLM: Exploring Multimodal Vision-Language Models for Augmented Time Series Forecasting [[paper](https://arxiv.org/abs/2502.04395)][[code](https://github.com/CityMind-Lab/ICML25-TimeVLM)]
+* [2025] [ICML] VisionTS: Visual masked autoencoders are free-lunch zero-shot time series forecasters [[paper](https://arxiv.org/abs/2408.17253)][[code](https://github.com/Keytoyze/VisionTS)]
 * [2024] [KDD] CAFO: Feature-centric explanation on time series classification [[paper](https://arxiv.org/abs/2406.01833)][[code](https://github.com/eai-lab/CAFO)]
 * [2024] [NeurIPS] Utilizing image transforms and diffusion models for generative modeling of short and long time series [[paper](https://openreview.net/pdf?id=2NfBBpbN9x)][[arxiv](https://arxiv.org/abs/2410.19538)][[code]](https://github.com/azencot-group/ImagenTime)
 * [2024] [NeurIPS] Brain-JEPA: Brain Dynamics Foundation Model with Gradient Positioning and Spatiotemporal Masking [[paper](https://proceedings.neurips.cc/paper_files/paper/2024/file/9c3828adf1500f5de3c56f6550dfe43c-Paper-Conference.pdf)][[arxiv](https://arxiv.org/abs/2409.19407)][[code](https://github.com/Eric-LRL/Brain-JEPA)]
@@ -90,7 +93,6 @@ Our code is compatible with all common benchmarks found in [Google Drive](https:
 * [2024] [IEEE Sensors Journal] Multisensor data fusion and time series to image encoding for hardness recognition [[paper](https://ieeexplore.ieee.org/document/10600105)]
 * [2024] [Finance Research Letters] Quantum-Enhanced Forecasting: Leveraging Quantum Gramian Angular Field and CNNs for Stock Return Predictions [[paper](https://www.sciencedirect.com/science/article/abs/pii/S1544612324008705)][[arxiv](https://arxiv.org/abs/2310.07427)]
 * [2024] [Eng. Appl. Artif. Intell.] EEG channel selection using Gramian Angular Fields and spectrograms for energy data visualization [[paper](https://www.sciencedirect.com/science/article/abs/pii/S0952197624004639)]
-* [2024] [Arxiv] VisionTS: Visual masked autoencoders are free-lunch zero-shot time series forecasters [[paper](https://arxiv.org/abs/2408.17253)][[code](https://github.com/Keytoyze/VisionTS)]
 * [2024] [Arxiv] Training-free time-series anomaly detection: Leveraging image foundation models [[paper](https://arxiv.org/abs/2408.14756)]
 * [2024] [Arxiv] On the feasibility of vision-language models for time-series classification [[paper](https://arxiv.org/abs/2412.17304)][[code](https://github.com/vinayp17/VLM_TSC)]
 * [2024] [Arxiv] See it, think it, sorted: Large multimodal models are few-shot time series anomaly analyzers [[paper](https://arxiv.org/abs/2411.02465)]
