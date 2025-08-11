@@ -75,8 +75,15 @@ Our code is compatible with all common benchmarks found in [Google Drive](https:
 
 * [2025] [Arxiv] Harnessing Vision Models for Time Series Analysis: A Survey [[paper](https://www.arxiv.org/abs/2502.08869)][[code](https://github.com/D2I-Group/awesome-vision-time-series)]
 
+#### Tutorials
+
+* [2025] [KDD] Multi-Model Time Series Analysis: Data, Methods, and Applications [[website](https://uconn-dsis.github.io/MMTSA_tutorial/)]
+
 #### Papers
 
+* [2025] [Arxiv] OccamVTS: Distilling Vision Models to 1% Parameters for Time Series Forecasting [[paper](https://www.arxiv.org/abs/2508.01727)]
+* [2025] [Arxiv] Vision-Enhanced Time Series Forecasting via Latent Diffusion Models [[paper](https://arxiv.org/abs/2502.14887)]
+* [2025] [Arxiv] VisionTS++: Cross-Modal Time Series Foundation Model with Continual Pre-trained Visual Backbones [[paper](https://www.arxiv.org/abs/2508.04379)][[code](https://github.com/HALF111/VisionTSpp)]
 * [2025] [Arxiv] From Images to Signals: Are Large Vision Models Useful for Time Series Analysis? [[paper](https://arxiv.org/abs/2505.24030)]
 * [2025] [Arxiv] Multi-Modal View Enhanced Large Vision Models for Long-Term Time Series Forecasting [[paper](https://arxiv.org/abs/2505.24003)]
 * [2025] [ICLR] TimeMixer++: A General Time Series Pattern Machine for Universal Predictive Analysis [[paper](https://openreview.net/pdf?id=1CLzLXSFNn)][[arxiv](https://arxiv.org/pdf/2410.16032)]
