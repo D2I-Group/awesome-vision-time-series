@@ -82,11 +82,7 @@ Our code is compatible with all common benchmarks found in [Google Drive](https:
 
 #### Papers
 
-<div style="display: flex; align-items: center;">
-  <span style="font-weight: bold; color: #cb8100ff; margin-right: 10px;">2025</span>
-  <hr style="width: 100px; height: 3px; background-color: #cb8100ff; border: none; margin-left: 0px;">
-</div>
-
+🗓️ **2025** ---
 * [2025] [Arxiv] SVTime: Small Time Series Forecasting Models Informed by "Physics" of Large Vision Model Forecasters [[paper](https://arxiv.org/abs/2510.09780)]
 * [2025] [Arxiv] ViFusionTST: Deep Fusion of Time-Series Image Representations from Load Signals for Early Bed-Exit Prediction [[paper](https://arxiv.org/abs/2506.22498)]
 * [2025] [Arxiv] Time Series Representations for Classification Lie Hidden in Pretrained Vision Transformers [[paper](https://arxiv.org/abs/2506.08641)]
@@ -101,11 +97,10 @@ Our code is compatible with all common benchmarks found in [Google Drive](https:
 * [2025] [Arxiv] Can Multimodal LLMs Perform Time Series Anomaly Detection? [[paper](https://arxiv.org/abs/2502.17812)][[code](https://github.com/mllm-ts/VisualTimeAnomaly)]
 * [2025] [ICML] Time-VLM: Exploring Multimodal Vision-Language Models for Augmented Time Series Forecasting [[paper](https://arxiv.org/abs/2502.04395)][[code](https://github.com/CityMind-Lab/ICML25-TimeVLM)]
 * [2025] [ICML] VisionTS: Visual masked autoencoders are free-lunch zero-shot time series forecasters [[paper](https://arxiv.org/abs/2408.17253)][[code](https://github.com/Keytoyze/VisionTS)]
-<div style="display: flex; align-items: center;">
-  <span style="font-weight: bold; color: #cb8100ff; margin-right: 10px;">2024</span>
-  <hr style="width: 100px; height: 3px; background-color: #cb8100ff; border: none; margin-left: 0px;">
-</div>
 
+<br>
+
+🗓️ **2024** ---
 * [2024] [KDD] CAFO: Feature-centric explanation on time series classification [[paper](https://arxiv.org/abs/2406.01833)][[code](https://github.com/eai-lab/CAFO)]
 * [2024] [NeurIPS] Utilizing image transforms and diffusion models for generative modeling of short and long time series [[paper](https://openreview.net/pdf?id=2NfBBpbN9x)][[arxiv](https://arxiv.org/abs/2410.19538)][[code]](https://github.com/azencot-group/ImagenTime)
 * [2024] [NeurIPS] Brain-JEPA: Brain Dynamics Foundation Model with Gradient Positioning and Spatiotemporal Masking [[paper](https://proceedings.neurips.cc/paper_files/paper/2024/file/9c3828adf1500f5de3c56f6550dfe43c-Paper-Conference.pdf)][[arxiv](https://arxiv.org/abs/2409.19407)][[code](https://github.com/Eric-LRL/Brain-JEPA)]
@@ -122,11 +117,10 @@ Our code is compatible with all common benchmarks found in [Google Drive](https:
 * [2024] [Arxiv] Plots unlock time-series understanding in multimodal models [[paper](https://arxiv.org/abs/2410.02637)]
 * [2024] [Arxiv] ViTime: A visual intelligence-based foundation model for time series forecasting [[paper](https://arxiv.org/abs/2407.07311)][[code]](https://github.com/IkeYang/ViTime)
 * [2024] [Arxiv] TimEHR: Image-based time series generation for electronic health records [[paper](https://arxiv.org/abs/2402.06318)][[code](https://github.com/esl-epfl/TimEHR)]
-<div style="display: flex; align-items: center;">
-  <span style="font-weight: bold; color: #cb8100ff; margin-right: 10px;">2023</span>
-  <hr style="width: 100px; height: 3px; background-color: #cb8100ff; border: none; margin-left: 0px;">
-</div>
 
+<br>
+
+🗓️ **2023** ---
 * [2023] [ICLR] TimesNet: Temporal 2d-variation modeling for general time series analysis [[paper](https://arxiv.org/abs/2210.02186)][[code](https://github.com/thuml/TimesNet)]
 * [2023] [ICLR] BrainBERT: Self-supervised representation learning for intracranial recordings [[paper](https://openreview.net/pdf?id=xmcYx_reUn6)][[arxiv](https://arxiv.org/abs/2302.14367)][[code](https://github.com/czlwang/BrainBERT)]
 * [2023] [NeurIPS] Time series as images: Vision transformer for irregularly sampled time series [[paper](https://arxiv.org/abs/2303.12799)][[code](https://github.com/Leezekun/ViTST)]
@@ -139,40 +133,36 @@ Our code is compatible with all common benchmarks found in [Google Drive](https:
 * [2023] [Electr. Power Syst. Res.] The use of deep learning and 2-D wavelet scalograms for power quality disturbances classification [[paper](https://www.sciencedirect.com/science/article/pii/S0378779622008872)]
 * [2023] [Arxiv] Leveraging vision-language models for granular market change prediction [[paper](https://arxiv.org/abs/2301.10166)]
 * [2023] [Arxiv] Your time series is worth a binary image: machine vision assisted deep framework for time series forecasting [[paper](https://arxiv.org/abs/2302.14390)][[code](https://github.com/IkeYang/machine-vision-assisted-deep-time-series-analysis-MV-DTSA-)]
-<div style="display: flex; align-items: center;">
-  <span style="font-weight: bold; color: #cb8100ff; margin-right: 10px;">2022</span>
-  <hr style="width: 100px; height: 3px; background-color: #cb8100ff; border: none; margin-left: 0px;">
-</div>
 
+<br>
+
+🗓️ **2022** ---
 * [2022] [AAAI] SSAST: Self-supervised audio spectrogram transformer [[paper](https://arxiv.org/abs/2110.09784)][[code](https://github.com/YuanGongND/ssast)]
 * [2022] [Interspeech] MAE-AST: Masked autoencoding audio spectrogram transformer [[paper](https://arxiv.org/abs/2203.16691)][[code](https://github.com/AlanBaade/MAE-AST-Public)]
 * [2022] [EMBC] Encoding Cardiopulmonary Exercise Testing Time Series as Images for Classification using Convolutional Neural Network [[paper](https://ieeexplore.ieee.org/abstract/document/9871878)][[arxiv](https://arxiv.org/abs/2204.12432)][[code](https://github.com/YashSharma/MultivariateTimeSeries?tab=readme-ov-file)]
 * [2022] [AIME] TTS-GAN: A transformer-based time-series generative adversarial network [[paper](https://arxiv.org/abs/2202.02691)][[code](https://github.com/imics-lab/tts-gan)]
 * [2022] [Neural Process. Lett.] Time Series Classification Based on Image Transformation Using Feature Fusion Strategy [[paper](https://link.springer.com/article/10.1007/s11063-022-10783-z)]
-<div style="display: flex; align-items: center;">
-  <span style="font-weight: bold; color: #cb8100ff; margin-right: 10px;">2021</span>
-  <hr style="width: 100px; height: 3px; background-color: #cb8100ff; border: none; margin-left: 0px;">
-</div>
 
+<br>
+
+🗓️ **2021** ---
 * [2021] [Interspeech] AST: Audio spectrogram transformer [[paper](https://arxiv.org/abs/2104.01778)][[code](https://github.com/YuanGongND/ast)]
 * [2021] [ICAIF] Visual time series forecasting: an image-driven approach [[paper](https://arxiv.org/abs/2011.09052)]
 * [2021] [ICAIF] Deep video prediction for time series forecasting [[paper](https://arxiv.org/abs/2102.12061)]
 * [2021] [IEEE ACM Trans. Audio Speech Lang. Process.] TERA: Self-Supervised Learning of Transformer Encoder Representation for Speech [[paper](https://ieeexplore.ieee.org/document/9478264)][[arxiv](https://arxiv.org/abs/2007.06028)]
-<div style="display: flex; align-items: center;">
-  <span style="font-weight: bold; color: #cb8100ff; margin-right: 10px;">2020</span>
-  <hr style="width: 100px; height: 3px; background-color: #cb8100ff; border: none; margin-left: 0px;">
-</div>
 
+<br>
+
+🗓️ **2020** ---
 * [2020] [ICAIF] Trading via image classification [[paper](https://arxiv.org/abs/1907.10046)]
 * [2020] [Expert Syst. Appl.] Forecasting with Time Series Imaging [[paper](https://arxiv.org/abs/1904.08064)][[code](https://github.com/lixixibj/forecasting-with-time-series-imaging)]
 * [2020] [IEEE Access] Human Activity Recognition Based on Gramian Angular Field and Deep Convolutional Neural Network [[paper](https://ieeexplore.ieee.org/document/9234451)]
 * [2020] [Energy] A novel ensemble method for hourly residential electricity consumption forecasting by imaging time series [[paper](https://www.sciencedirect.com/science/article/abs/pii/S0360544220309658)]
 * [2020] [IEEE CAA J. Autom. Sinica] Deep learning and time series-to-image encoding for financial forecasting [[paper](https://ieeexplore.ieee.org/document/9080613)]
-<div style="display: flex; align-items: center;">
-  <span style="font-weight: bold; color: #cb8100ff; margin-right: 10px;">Before 2020</span>
-  <hr style="width: 100px; height: 3px; background-color: #cb8100ff; border: none; margin-left: 0px;">
-</div>
 
+<br>
+
+🗓️ **Before 2020** ---
 * [2019] [AAAI] A Deep Neural Network for unsupervised anomaly detection and diagnosis in multivariate time series data [[paper](https://ojs.aaai.org/index.php/AAAI/article/view/3942)][[code](https://github.com/7fantasysz/MSCRED)]
 * [2019] [Arxiv] Multivariate time series classification using dilated convolutional neural network [[paper](https://arxiv.org/abs/1905.01697)][[code](https://github.com/SonbolYb/multivariate_timeseries_dilated_conv)]
 * [2017] [ICMV] Classification of Time-series Images using Deep Convolutional Neural Networks [[paper](https://arxiv.org/abs/1710.00886)]
