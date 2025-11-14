@@ -13,6 +13,10 @@ This repository tracks the latest paper on Vision Models for Time series Analysi
 
 🌟 [News] Our survey paper is accepted by IJCAI 2025 survey track!
 
+🌟 You're welcome to suggest new Vision4TS papers by contacting jni7 [at] uh [dot] edu!
+
+🌟 Please consider [citing](#citation) our survey paper if you find it helpful :), and feel free to share this repository with others!
+
 <p align="center">
     🏆&nbsp;<a href="#contribution">Contribution</a>
     | 📌&nbsp;<a href="#taxonomy">Taxonomy</a>
@@ -81,6 +85,11 @@ Our code is compatible with all common benchmarks found in [Google Drive](https:
 * [2025] [KDD] Multi-Model Time Series Analysis: Data, Methods, and Applications [[website](https://uconn-dsis.github.io/MMTSA_tutorial/)]
 
 #### Papers
+
+🗓️ **2026** ---
+* [2026] [AAAI] Harnessing Vision-Language Models for Time Series Anomaly Detection [[paper](https://arxiv.org/abs/2506.06836)]
+
+<br>
 
 🗓️ **2025** ---
 * [2025] [Arxiv] SVTime: Small Time Series Forecasting Models Informed by "Physics" of Large Vision Model Forecasters [[paper](https://arxiv.org/abs/2510.09780)]
@@ -280,11 +289,10 @@ Method|TS-Type|Imaging|Multimodal|Model|Pre-trained|Fine-tune|Prompt|TS-Recover|
 ### Citation
 
 ```
-@article{ni2025harnessing,
+@inproceedings{ni2025harnessing,
   title={Harnessing Vision Models for Time Series Analysis: A Survey},
   author={Ni, Jingchao and Zhao, Ziming and Shen, ChengAo and Tong, Hanghang and Song, Dongjin and Cheng, Wei and Luo, Dongsheng and Chen, Haifeng},
-  journal={arXiv preprint arXiv:2502.08869},
+  booktitle={IJCAI},
   year={2025}
 }
 ```
-
