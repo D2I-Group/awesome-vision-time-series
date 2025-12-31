@@ -6,6 +6,8 @@
 ![PRs Welcome](https://img.shields.io/badge/PRs-Welcome-green)
 [![arXiv](https://img.shields.io/badge/arXiv-2502.08869-b31b1b.svg)](https://www.arxiv.org/abs/2502.08869)
 [![PyPI - Version](https://img.shields.io/pypi/v/version)](#package)
+
+[[时序人](https://mp.weixin.qq.com/s/S0XENUWyGAKeywSlpwmWXA)] [[时空探索之旅](https://mp.weixin.qq.com/s/bHjPce44dWoQ7W-Dr7IZ3A)] [[时序之心](https://mp.weixin.qq.com/s/pFsCwut33CfLFlaKzdKFoA)]
 </div>
 
 
