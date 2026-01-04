@@ -90,6 +90,7 @@ Our code is compatible with all common benchmarks found in [Google Drive](https:
 
 🗓️ **2026** ---
 * [2026] [AAAI] Harnessing Vision-Language Models for Time Series Anomaly Detection [[paper](https://arxiv.org/abs/2506.06836)]
+* [2026] [AAAI] OccamVTS: Distilling Vision Models to 1% Parameters for Time Series Forecasting [[paper](https://www.arxiv.org/abs/2508.01727)][[code](https://github.com/sisuolv/OccamVTS)]
 
 <br>
 
@@ -99,7 +100,6 @@ Our code is compatible with all common benchmarks found in [Google Drive](https:
 * [2025] [Arxiv] Time Series Representations for Classification Lie Hidden in Pretrained Vision Transformers [[paper](https://arxiv.org/abs/2506.08641)]
 * [2025] [Arxiv] MLLM4TS: Leveraging Vision and Multimodal Language Models for General Time-Series Analysis [[paper](https://arxiv.org/abs/2510.07513)]
 * [2025] [CAIE] TSSI: Time Series as Screenshot Images for multivariate time series classification using convolutional neural networks [[paper](https://www.sciencedirect.com/science/article/abs/pii/S036083522500539X)]
-* [2025] [Arxiv] OccamVTS: Distilling Vision Models to 1% Parameters for Time Series Forecasting [[paper](https://www.arxiv.org/abs/2508.01727)]
 * [2025] [Arxiv] Vision-Enhanced Time Series Forecasting via Latent Diffusion Models [[paper](https://arxiv.org/abs/2502.14887)]
 * [2025] [Arxiv] VisionTS++: Cross-Modal Time Series Foundation Model with Continual Pre-trained Visual Backbones [[paper](https://www.arxiv.org/abs/2508.04379)][[code](https://github.com/HALF111/VisionTSpp)]
 * [2025] [Arxiv] From Images to Signals: Are Large Vision Models Useful for Time Series Analysis? [[paper](https://arxiv.org/abs/2505.24030)]
