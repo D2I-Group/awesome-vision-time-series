@@ -89,6 +89,8 @@ Our code is compatible with all common benchmarks found in [Google Drive](https:
 #### Papers
 
 🗓️ **2026** ---
+* [2026] [Arxiv] Time Series, Vision, and Language: Exploring the Limits of Alignment in Contrastive Representation Spaces [[paper](https://arxiv.org/abs/2602.19367)]
+* [2026] [Arxiv] TimeOmni-VL: Unified Models for Time Series Understanding and Generation [[paper](https://arxiv.org/abs/2602.17149)]
 * [2026] [AAAI] Harnessing Vision-Language Models for Time Series Anomaly Detection [[paper](https://arxiv.org/abs/2506.06836)]
 * [2026] [AAAI] OccamVTS: Distilling Vision Models to 1% Parameters for Time Series Forecasting [[paper](https://www.arxiv.org/abs/2508.01727)][[code](https://github.com/sisuolv/OccamVTS)]
 
