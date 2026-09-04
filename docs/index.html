@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Harnessing Vision Models for Time Series Analysis: A Survey</title>
+<meta name="description" content="An IJCAI 2025 survey of vision models for time series analysis, with a dual-view taxonomy of how to encode time series as images and how to model the imaged time series.">
+<meta name="author" content="Jingchao Ni, Ziming Zhao, ChengAo Shen, Hanghang Tong, Dongjin Song, Wei Cheng, Dongsheng Luo, Haifeng Chen">
+<meta name="keywords" content="time series analysis, imaged time series, large vision models, vision-language models, LMMs, Line Plot, Heatmap, Spectrogram, Gramian Angular Field, Recurrence Plot, IJCAI 2025, survey">
+<link rel="canonical" href="https://d2i-group.github.io/awesome-vision-time-series/">
+
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://d2i-group.github.io/awesome-vision-time-series/">
+<meta property="og:title" content="Harnessing Vision Models for Time Series Analysis: A Survey">
+<meta property="og:description" content="IJCAI 2025 — a dual-view taxonomy that answers how to encode time series as images and how to model imaged time series.">
+<meta property="og:image" content="https://d2i-group.github.io/awesome-vision-time-series/assets/fig1.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Vision × Time Series (IJCAI 2025)">
+<meta name="twitter:description" content="A survey of vision models for time series analysis: imaging methods, imaged time series modeling, and pre- and post-processing.">
+<meta name="twitter:image" content="https://d2i-group.github.io/awesome-vision-time-series/assets/fig1.png">
+
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%23f6f5f1'/><rect x='16' y='16' width='68' height='68' fill='none' stroke='%23c8102e' stroke-width='8'/><path d='M24 66 L40 44 L54 58 L76 30' fill='none' stroke='%23c8102e' stroke-width='8' stroke-linecap='round' stroke-linejoin='round'/></svg>">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=Newsreader:opsz,wght@6..72,300;6..72,400;6..72,500&family=Noto+Sans+SC:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="static/css/style.css">
+
+<script>
+  (function () {
+    var t = localStorage.getItem("mc-theme");
+    document.documentElement.setAttribute(
+      "data-theme", t || (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light"));
+    var l = localStorage.getItem("mc-lang") || "en";
+    document.documentElement.setAttribute("data-lang", l);
+    if (l === "zh") document.documentElement.setAttribute("lang", "zh-CN");
+  })();
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ScholarlyArticle",
+  "name": "Harnessing Vision Models for Time Series Analysis: A Survey",
+  "author": [
+    {"@type":"Person","name":"Jingchao Ni"},  {"@type":"Person","name":"Ziming Zhao"},
+    {"@type":"Person","name":"ChengAo Shen"}, {"@type":"Person","name":"Hanghang Tong"},
+    {"@type":"Person","name":"Dongjin Song"}, {"@type":"Person","name":"Wei Cheng"},
+    {"@type":"Person","name":"Dongsheng Luo"},{"@type":"Person","name":"Haifeng Chen"}
+  ],
+  "url": "https://d2i-group.github.io/awesome-vision-time-series/",
+  "sameAs": "https://arxiv.org/abs/2502.08869"
+}
+</script>
+</head>
+
+<body>
+
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <a class="wordmark" href="#top">Vision × Time Series</a>
+    <div class="nav-links">
+      <a href="#overview" data-zh="概览">Overview</a>
+      <a href="#imaging" data-zh="成像">Imaging</a>
+      <a href="#modeling" data-zh="建模">Modeling</a>
+      <a href="#taxonomy" data-zh="分类体系">Taxonomy</a>
+      <a href="#repository" data-zh="资源库">Repository</a>
+      <a href="#directions" data-zh="方向">Directions</a>
+      <a href="#cite" data-zh="引用">Cite</a>
+    </div>
+    <div class="nav-tools">
+      <button class="lang-btn" id="lang-toggle" aria-label="Switch language">
+        <span class="lang-en">中文</span><span class="lang-zh">EN</span>
+      </button>
+      <button class="theme-btn" id="theme-toggle" aria-label="Switch colour theme">
+        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4.2"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+      </button>
+      <button class="menu-btn" id="menu-toggle" aria-label="Sections" aria-expanded="false">
+        <svg class="icon-bars" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        <svg class="icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="tags">
+    <span class="tag accent" data-zh="IJCAI 2025 · 综述赛道">IJCAI 2025 · Survey Track</span>
+    <span class="tag" data-zh="时间序列分析">Time Series Analysis</span>
+    <span class="tag" data-zh="大视觉模型">Large Vision Models</span>
+    <span class="tag" data-zh="视觉语言模型">Vision-Language Models</span>
+  </div>
+
+  <h1>Vision × Time Series</h1>
+  <p class="standfirst" data-zh="面向时间序列分析的<br class=&quot;lb&quot;>视觉模型综述">
+    Harnessing Vision Models<br class="lb">
+    for Time Series Analysis: A Survey
+  </p>
+
+  <p class="people">
+    <a href="https://nijingchao.github.io/">Jingchao Ni</a><sup>1</sup>,
+    Ziming Zhao<sup>1</sup>,
+    <a href="https://chengaoshen.com/">ChengAo Shen</a><sup>1</sup>,
+    <a href="http://tonghanghang.org/">Hanghang Tong</a><sup>2</sup>,
+    <a href="https://songdj.github.io/">Dongjin Song</a><sup>3</sup>,
+    <a href="https://sites.google.com/site/weichengunc/welcome-to-wei-chengs-homepage">Wei Cheng</a><sup>4</sup>,
+    <a href="https://dluoedu.github.io/">Dongsheng Luo</a><sup>5</sup>,
+    <a href="https://www.nec-labs.com/research/data-science-system-security/people/haifeng-chen/">Haifeng Chen</a><sup>4</sup>
+  </p>
+  <p class="places" data-zh="<sup>1</sup>休斯敦大学 &nbsp; <sup>2</sup>伊利诺伊大学厄巴纳‑香槟分校 &nbsp; <sup>3</sup>康涅狄格大学 &nbsp; <sup>4</sup>NEC 美国实验室 &nbsp; <sup>5</sup>佛罗里达国际大学">
+    <sup>1</sup>University of Houston &nbsp;
+    <sup>2</sup>University of Illinois at Urbana-Champaign &nbsp;
+    <sup>3</sup>University of Connecticut &nbsp;
+    <sup>4</sup>NEC Laboratories America &nbsp;
+    <sup>5</sup>Florida International University
+  </p>
+
+  <div class="actions">
+    <a class="btn primary" href="https://arxiv.org/pdf/2502.08869">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg>
+      <span data-zh="论文">Paper</span>
+    </a>
+    <a class="btn" href="https://arxiv.org/abs/2502.08869">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+      arXiv
+    </a>
+    <a class="btn" href="https://github.com/D2I-Group/awesome-vision-time-series">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.73.5.5 5.73.5 12a11.5 11.5 0 0 0 7.86 10.92c.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.37-3.88-1.37-.53-1.34-1.29-1.7-1.29-1.7-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.2 1.77 1.2 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.56-.29-5.25-1.28-5.25-5.7 0-1.26.45-2.29 1.19-3.1-.12-.3-.52-1.47.11-3.06 0 0 .97-.31 3.18 1.18a11 11 0 0 1 5.79 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.24 2.76.12 3.05.74.82 1.19 1.85 1.19 3.11 0 4.43-2.7 5.41-5.27 5.69.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 23.5 12C23.5 5.73 18.27.5 12 .5z"/></svg>
+      <span data-zh="资源库">Repository</span>
+    </a>
+    <a class="btn" href="#cite">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 7h4v6a4 4 0 0 1-4 4M15 7h4v6a4 4 0 0 1-4 4"/></svg>
+      BibTeX
+    </a>
+  </div>
+
+  <a class="scroll-cue" href="#overview" aria-label="Scroll to the overview">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M6 13l6 6 6-6"/></svg>
+  </a>
+</header>
+
+<section class="band" id="overview">
+  <div class="band-inner">
+    <div class="band-label" data-zh="概览">Overview</div>
+    <div class="band-body">
+      <h2 data-zh="先把序列画成图，再让视觉模型去读">Draw the series first, then let a vision model read it</h2>
+
+      <div class="prose">
+        <figure class="inset">
+          <div class="plate">
+            <img src="assets/fig1.png" alt="The general process of leveraging vision models for time series analysis, from time series pre-processing through imaging, image pre-processing, imaged time series modeling and post-processing.">
+          </div>
+          <figcaption data-zh="利用视觉模型进行时间序列分析的一般流程。红色方框是本综述所采用的两个分类视角，虚线方框表示可选的、依任务而定的步骤。">
+            The general process of leveraging vision models for time series analysis. The red boxes are
+            two views of taxonomy used in this survey. The dashed boxes denote optional, task-dependent
+            steps.
+          </figcaption>
+        </figure>
+        <p data-zh="时间序列分析已从传统的自回归模型演进到深度学习、Transformer 与大语言模型（LLM）。视觉模型一路上也被不断探索，但由于序列建模长期占据主导，它们的贡献较少被认可。然而，连续时间序列与 LLM 的离散 token 空间之间的错配，以及难以刻画多变量相关性等挑战，使得<strong>大视觉模型（LVM）与视觉语言模型（VLM）</strong>日益受到关注。本综述凸显视觉模型在时间序列分析中相对于 LLM 的优势，提出一套<strong>双视角分类体系</strong>，回答“如何把时间序列编码为图像”与“如何对图像化的时间序列建模”这两个关键研究问题。此外，我们讨论了该框架中前处理与后处理的挑战，并勾勒出推动该领域前进的未来方向。">
+          Time series analysis has evolved from traditional autoregressive models to deep learning,
+          Transformers, and Large Language Models (LLMs). While vision models have also been explored
+          along the way, their contributions are less recognized due to the predominance of sequence
+          modeling. However, challenges such as the mismatch between continuous time series and LLMs'
+          discrete token space, and the difficulty in capturing multivariate correlations, have led to
+          growing interest in <strong>Large Vision Models (LVMs) and Vision-Language Models
+          (VLMs)</strong>. This survey highlights the advantages of vision models over LLMs in time
+          series analysis, offering a comprehensive <strong>dual-view taxonomy</strong> that answers
+          key research questions like how to encode time series as images and how to model imaged time
+          series. Additionally, we address pre- and post-processing challenges in this framework and
+          outline future directions for advancing the field.
+        </p>
+        <p data-zh="细看之下，更多优势倾向于 LVM 而非 LLM：图像与时间序列之间存在内在联系——图像中（每个通道的）每一行／每一列都是一串连续的像素值，通过在海量图像上预训练，LVM 可能已经学到趋势、周期、尖峰等重要的序列模式，而 LLM 是在离散 token 上预训练的，与连续时间序列的对齐较差；与其用通道独立假设去逐个建模多元序列中的每个变量，一些成像方法能天然地表示多元序列，从而显式编码变量间的相关性；在提示 LLM 时，已有方法常常难以恰当地把一长串（或一个矩阵的）浮点数口语化，这可能受限于上下文长度或带来高昂的 API 成本，而已有工作发现在图像化的时间序列上使用 LVM 更适合提示、API 成本也更低；此外，一些成像方法能以紧凑的方式编码长序列，因而在长期依赖建模上潜力很大。">
+          Taking a closer inspection reveals more advantages favoring LVMs over LLMs. There is an
+          inherent relationship between images and time series — each row or column in an image (per
+          channel) is a sequence of continuous pixel values, so by pre-training on massive images LVMs
+          may have learned important sequential patterns such as trends, periods, and spikes, whereas
+          LLMs are pre-trained on discrete tokens and thus are less aligned with continuous time
+          series. Instead of using the channel-independence assumption to individually model each
+          variate in a multivariate series, some imaging methods can naturally represent it, enabling
+          explicit correlation encoding. When prompting LLMs, existing methods often struggle with
+          properly verbalizing a long sequence (or a matrix) of floating numbers, which may be limited
+          by the context length or induce high API costs; in contrast, existing works find that using
+          LVMs on imaged time series is more prompt-friendly and less API-costly. And some imaging
+          methods can encode long time series in a compact manner, thus have a great potential in
+          modeling long-term dependency.
+        </p>
+        <p data-zh="本综述聚焦于把时间序列变换为图像（即<i>图像化的时间序列</i>）、再对其应用视觉模型以完成分类、预测、异常检测等时间序列任务的方法。值得注意的是，处理视频或图像序列的方法不属于这一类，因为它们并没有把时间序列变换为图像。据我们所知，现有文献中尚缺少对相关工作的系统梳理，因此我们全面考察了传统方法与最新的（SOTA）方法。">
+          This survey focuses on methods that transform time series to images, namely <i>imaged time
+          series</i>, and then apply vision models on the imaged time series for tackling time series
+          tasks, such as classification, forecasting and anomaly detection. It is noteworthy that
+          methods on videos or sequential images do not belong to this category because they don't
+          transform time series to images. A thorough review of relevant works is absent in the
+          existing literature to the best of our knowledge; in light of this, we comprehensively
+          investigate the traditional and the state-of-the-art (SOTA) methods.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="band" id="imaging">
+  <div class="band-inner">
+    <div class="band-label" data-zh="第一视角 · 成像">First view · Imaging</div>
+    <div class="band-body">
+      <h2 data-zh="把一条序列画成图的五种主要方法">Five primary ways to turn a series into a picture</h2>
+
+      <div class="prose">
+        <p data-zh="我们从<i>时间序列到图像的变换</i>与<i>图像化时间序列的建模</i>两个视角提出分类体系。就前者而言，我们讨论 5 种用于对单变量或多变量时间序列成像的主要方法，并评述它们各自的优劣。">
+          We propose a taxonomy from the two views of <i>Time Series to Image Transformation</i> and
+          <i>Imaged Time Series Modeling</i>. For the former, we discuss 5 primary methods for imaging
+          univariate or multivariate time series, and remark on their pros and cons.
+        </p>
+      </div>
+
+      <figure>
+        <div class="plate">
+          <img src="assets/fig2.png" alt="Line Plot, Heatmap, STFT spectrogram, wavelet spectrogram, Gramian Angular Field and Recurrence Plot views of the same time series sample.">
+        </div>
+        <figcaption data-zh="用一个来自 Electricity 基准数据集的样本（长度 336）演示不同的时间序列成像方法。(a)(c)(d)(e)(f) 可视化同一个变量，(b) 可视化全部 321 个变量。Filterbank 因与 STFT 相似而略去。">
+          An illustration of different methods for imaging time series with a sample (length = 336)
+          from the <i>Electricity</i> benchmark dataset. (a)(c)(d)(e)(f) visualize the same variate.
+          (b) visualizes all 321 variates. Filterbank is omitted due to its similarity to STFT.
+        </figcaption>
+      </figure>
+
+      <div class="run-in">
+        <p data-zh="<b>折线图</b>供人分析时可视化单变量序列最直接的方式（例如股票、用电量等）。最简单的做法是画一张二维图像，x 轴表示时间步、y 轴表示时间上的取值，用一条折线连接序列随时间的全部取值。这张图像既可以是三通道（即 RGB）的，也可以是单通道的，因为颜色未必携带信息。ForCNN 甚至用一个 8 位整数表示每个像素以得到黑白图像。到目前为止，对于图例、网格、刻度标签等其他图形元素是否能在任何任务中带来额外收益，尚无共识：ViTST 发现这些元素在分类任务中是多余的，而 TAMA 发现网格状辅助线有助于增强异常检测。">
+          <b>Line Plot</b> a straightforward way for visualizing a univariate series for human analysis
+          (e.g., stocks, power consumption). The simplest approach is to draw a 2D image with the
+          x-axis representing time steps and the y-axis representing time-wise values, with a line
+          connecting all values of the series over time. This image can be either three-channel (i.e.,
+          RGB) or single-channel as the colors may not be informative; <code>ForCNN</code> even uses a
+          single 8-bit integer to represent each pixel for black-white images. So far, there is no
+          consensus on whether other graphical components, such as legend, grids and tick labels, could
+          provide extra benefits in any task. For example, <code>ViTST</code> finds these components
+          are superfluous in a classification task, while <code>TAMA</code> finds grid-like auxiliary
+          lines help enhance anomaly detection.
+        </p>
+        <p data-zh="<b>热力图</b>用颜色可视化矩阵中各元素的大小。它被用来把多元时间序列的矩阵表示为一张单通道的“变量 × 时间”图像；TimEHR 把这一做法推广到时间步间隔不均的不规则多元序列，方法是把不均匀的时间步归入若干等宽的区间。与之相反，VisionTS 用热力图来可视化单变量序列：它把长度为 T 的单变量序列切成若干个长度为一个周期的子序列，堆叠成矩阵，并把通道复制 3 次形成灰度图像输入 LVM。需要说明的是，本文中“热力图”专指那些用颜色可视化单变量或多变量序列（归一化后）取值、而不做其他变换的图像。">
+          <b>Heatmap</b> visualizes the magnitudes of the values in a matrix using color. It has been
+          used to represent the matrix of a multivariate series as a one-channel variate-by-time image;
+          <code>TimEHR</code> extends this to irregular multivariate series, where the intervals
+          between time steps are uneven, by grouping the uneven time steps into uniform bins. In
+          contrast, <code>VisionTS</code> uses Heatmap to visualize a univariate series: it segments a
+          length-T series into subsequences of one period, stacks them into a matrix, and replicates
+          the channel 3 times to form a grayscale image for input to an LVM. In this paper, the name
+          Heatmap refers specifically to images that use color to visualize the (normalized) values in
+          a univariate or multivariate series without performing other transformations.
+        </p>
+        <p data-zh="<b>频谱图</b>是信号频率成分随时间变化的可视化表示，广泛用于分析音频信号。由于音频信号是一类单变量序列，频谱图可以视为对单变量序列成像的一种方法。常见的形式是一张二维热力图，x 轴表示时间步、y 轴表示频率，即所谓的时频空间；图中每个像素表示某个特定频率在某个特定时间点上的（对数）幅值。生成频谱图的典型方法包括短时傅里叶变换（STFT）、小波变换与滤波器组（Filterbank）。相较于窗口大小固定的 STFT，小波变换允许可变的小波尺度——尺度越大，低频信息越精确。">
+          <b>Spectrogram</b> a visual representation of the spectrum of frequencies of a signal as it
+          varies with time, extensively used for analyzing audio signals. Since audio signals are a
+          type of univariate series, a spectrogram can be considered as a method for imaging one. A
+          common format is a 2D heatmap image with the x-axis representing time steps and the y-axis
+          representing frequency, a.k.a. a time-frequency space; each pixel in the image represents the
+          (logarithmic) amplitude of a specific frequency at a specific time point. Typical methods for
+          producing a spectrogram include Short-Time Fourier Transform (STFT), Wavelet Transform, and
+          Filterbank. Compared to STFT, which uses a fixed window size, Wavelet Transform allows
+          variable wavelet sizes — a larger size for more precise low frequency information.
+        </p>
+        <p data-zh="<b>格拉姆角场（GAF）</b>最初被提出用于以 CNN 分类单变量序列，随后被扩展到插补任务，也被用于金融时间序列预测。给定一条单变量序列，第一步是把每个取值缩放到 [0, 1]（或 [−1, 1]）区间，这一取值范围使得可以用反余弦把它映射到极坐标，并用半径编码时间戳。GAF 有两种形式——格拉姆和角场（GASF）与格拉姆差角场（GADF），它们利用了序列中成对时间点之间的相关性。最终得到一个 T × T 的矩阵，GAF 图像就是在该矩阵上作的热力图，其两个坐标轴都表示时间。">
+          <b>Gramian Angular Field</b> was introduced for classifying univariate series using CNNs, then
+          extended to an imputation task, and also applied to financial time series forecasting. Given
+          a univariate series, the first step is to rescale each value to within [0, 1] (or [−1, 1]).
+          This range enables mapping it to polar coordinates by an arc cosine, with a radius encoding
+          the time stamp. Two types of GAF, Gramian Sum Angular Field (GASF) and Gramian Difference
+          Angular Field (GADF), exploit the pairwise temporal correlations in the series. The outcome
+          is a T × T matrix, and a GAF image is a heatmap on it with both axes representing time.
+        </p>
+        <p data-zh="<b>递归图（RP）</b>通过重构相空间，把一条单变量序列编码成一张能刻画其周期模式的图像。相空间可由时延嵌入重构——得到一组新的向量，其中时延与相空间维数都是超参数。有了这些向量，RP 图像度量它们两两之间的距离，并用 Heaviside 阶跃函数对一个阈值作用，得到一个二值矩阵：当两个向量足够相似时取 1，从而产生一张黑白图像。RP 的一个优点是可以通过调节相空间维数与时延灵活控制图像尺寸。有些工作省去阈值化，直接用向量间距离生成连续取值的图像，以避免信息损失。">
+          <b>Recurrence Plot</b> encodes a univariate series into an image that captures its periodic
+          patterns by using its reconstructed phase space. The phase space can be reconstructed by time
+          delay embedding — a set of new vectors, where the time delay and the dimension of the phase
+          space are both hyperparameters. With those vectors, an RP image measures their pairwise
+          distances and applies the Heaviside step function to a threshold, generating a binary matrix
+          whose entry is 1 if two vectors are sufficiently similar, producing a black-white image. An
+          advantage of RP is its flexibility in image size by tuning the dimension and the delay. Some
+          works omit the thresholding and use the distances themselves to produce continuously valued
+          images to avoid information loss.
+        </p>
+        <p data-zh="<b>其他方法</b>此外，马尔可夫转移场（MTF）是一个编码 Q 个时间片段之间转移概率的矩阵，用于可视化单变量序列。ImagenTime 把时延嵌入向量堆叠成矩阵来可视化单变量序列；MSCRED 对 d 变量序列的 d × d 相关矩阵作热力图以进行异常检测；更早的工作提出用 Bitmap 对离散化后的单变量序列成像并定义它们之间的距离。一些方法混合使用多种成像方法以获得更丰富的表示，例如把 GASF、GADF 与 MTF 堆叠成三通道图像，FIRTS 则组合 GASF、MTF 与 RP。在这些工作中，这类多视角表示在分类任务上比单一视角的图像表现出更强的鲁棒性。">
+          <b>Other methods</b> Markov Transition Field (MTF) is a matrix encoding transition
+          probabilities among Q time segments, used to visualize a univariate series.
+          <code>ImagenTime</code> stacks the delay embeddings into a matrix for visualizing a univariate
+          series; <code>MSCRED</code> applies heatmaps to the correlation matrices of a d-variate series
+          for anomaly detection; earlier work proposes Bitmaps to image discretized series and defines
+          distances among them. Some methods use a mixture of imaging methods for richer
+          representations, e.g., stacking GASF, GADF, and MTF into a 3-channel image, while
+          <code>FIRTS</code> combines GASF, MTF, and RP. These multi-view representations have shown
+          greater robustness than single-view images in these works for classification tasks.
+        </p>
+        <p data-zh="<b>多元序列怎么办</b>在上述方法中，热力图可用于可视化多元序列的“变量 × 时间”矩阵，此时相关的变量应当在空间上彼此靠近。折线图可以通过把所有变量画在同一张图中、或把各个单变量图像拼成一张更大的图像来可视化多元序列，但这些做法只适用于变量数较少的情形。频谱图、GAF 与 RP 是专为单变量序列设计的。对这些方法以及折线图而言，在多元序列成像上并不直接，通常的做法是采用通道独立假设逐个建模每个变量，或者把 d 个变量的图像堆叠成一张 d 通道图像；但后者与一些在 RGB 图像上预训练、要求三通道输入的视觉模型并不匹配。">
+          <b>How to model multivariate series</b> Heatmap can be used to visualize the variate-time
+          matrices of a multivariate series, where correlated variates should be spatially close to
+          each other. Line Plot can be used to visualize one by plotting all variates in the same image
+          or combining all univariate images to compose a bigger image, but these methods only work for
+          a small number of variates. Spectrogram, GAF and RP were designed specifically for univariate
+          series. For these methods and Line Plot, which are not straightforward in imaging
+          multivariate series, the general approaches include using the channel independence assumption
+          to model each variate individually, or stacking the images of d variates to form a d-channel
+          image. However, the latter does not fit some vision models pre-trained on RGB images which
+          require 3-channel inputs.
+        </p>
+      </div>
+
+      <div>
+        <div class="tablewrap">
+          <table class="data" id="imaging-table">
+            <thead>
+              <tr>
+                <th class="name" data-zh="方法">Method</th>
+                <th class="left" data-zh="序列类型">TS-Type</th>
+                <th class="left" data-zh="优势">Advantages</th>
+                <th class="left" data-zh="局限">Limitations</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="name" data-zh="折线图">Line Plot</td>
+                <td class="left">UTS, MTS</td>
+                <td class="left" data-zh="契合人类对时间序列的感知">matches human perception of time series</td>
+                <td class="left" data-zh="仅适用于变量数较少的多元序列">limited to MTS with a small number of variates</td>
+              </tr>
+              <tr>
+                <td class="name" data-zh="热力图">Heatmap</td>
+                <td class="left">UTS, MTS</td>
+                <td class="left" data-zh="对单变量与多变量序列都很直接">straightforward for both UTS and MTS</td>
+                <td class="left" data-zh="变量的排列顺序会影响其相关性的学习">the order of variates may affect their correlation learning</td>
+              </tr>
+              <tr>
+                <td class="name" data-zh="频谱图">Spectrogram</td>
+                <td class="left">UTS</td>
+                <td class="left" data-zh="编码时频空间">encodes the time-frequency space</td>
+                <td class="left" data-zh="仅适用于单变量序列；需要恰当地选择窗函数／小波">limited to UTS; needs a proper choice of window/wavelet</td>
+              </tr>
+              <tr>
+                <td class="name">GAF</td>
+                <td class="left">UTS</td>
+                <td class="left" data-zh="编码单变量序列中的时间相关性">encodes the temporal correlations in a UTS</td>
+                <td class="left" data-zh="仅适用于单变量序列；时间与空间复杂度为 O(T²)">limited to UTS; O(T²) time and space complexity</td>
+              </tr>
+              <tr>
+                <td class="name">RP</td>
+                <td class="left">UTS</td>
+                <td class="left" data-zh="通过调节相空间维数与时延灵活控制图像尺寸">flexibility in image size by tuning the dimension and the delay</td>
+                <td class="left" data-zh="仅适用于单变量序列；阈值化之后存在信息损失">limited to UTS; information loss after thresholding</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="note" data-zh="五种主要的时间序列成像方法小结。<b>序列类型</b>指时间序列的类型：UTS 为单变量时间序列，MTS 为多变量时间序列。">
+          A summary of the five primary methods for transforming time series to images.
+          <b>TS-Type</b> denotes type of time series: UTS is a univariate time series, MTS a
+          multivariate one.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="modeling">
+  <div class="band-inner">
+    <div class="band-label" data-zh="第二视角 · 建模">Second view · Modeling</div>
+    <div class="band-body">
+      <h2 data-zh="从递归图上的 K-NN，到被提示的多模态大模型">From K-NN on recurrence plots to prompted LMMs</h2>
+
+      <div class="prose">
+        <p data-zh="有了图像表示，时间序列分析就可以直接用视觉模型来完成。我们按传统模型、LVM 与 LMM 对已有方法分类，讨论它们在预训练、微调、提示上的策略以及任务专用输出头的设计。">
+          With image representations, time series analysis can be readily performed with vision models.
+          We classify the existing methods by conventional vision models, LVMs and LMMs, and discuss
+          their strategies on pre-training, fine-tuning, prompting, and the designs of task-specific
+          heads.
+        </p>
+      </div>
+
+      <figure>
+        <div class="plate">
+          <img src="assets/fig3.png" alt="Four modeling strategies on imaged time series: conventional vision models, large vision models, large multimodal models, and task-specific heads.">
+        </div>
+        <figcaption data-zh="不同的图像化时间序列建模策略示意 (a)(b)(c)，以及任务专用输出头 (d)。">
+          An illustration of different modeling strategies on imaged time series in (a)(b)(c) and
+          task-specific heads in (d).
+        </figcaption>
+      </figure>
+
+      <div class="run-in">
+        <p data-zh="<b>传统视觉模型</b>沿用传统的图像分类思路，已有工作在时间序列的递归图上使用 K-NN 分类器，或在折线图上使用 SVM、AdaBoost 等基础分类器的集成来做时间序列分类。作为图像编码器，CNN 被广泛用于学习图像表示；与在序列上使用一维 CNN 不同，二维与三维 CNN 可以直接作用于图像化的时间序列。更常见的是把 ResNet、Inception-v1 与 VGG-Net 用在折线图、热力图、RP 图、GAF 图，乃至 GAF、MTF 与 RP 的混合图像上。在时间序列生成任务中，CNN 的 GAN 框架与基于 U-Net 的扩散模型也被探索过。由于规模从小到中等，这些模型通常用任务专属的训练数据从头训练；与此同时，微调预训练视觉模型在时间序列异常检测与预测的跨模态知识迁移中已被发现颇具前景。">
+          <b>Conventional vision models</b> Following traditional image classification, a K-NN
+          classifier has been applied on the recurrence plots of time series, and an ensemble of
+          fundamental classifiers such as SVM and AdaBoost on the Line Plots, for time series
+          classification. As an image encoder, CNNs have been widely used for learning image
+          representations; different from using 1D CNNs on sequences, 2D and 3D CNNs can be applied on
+          imaged time series. More frequently, ResNet, Inception-v1 and VGG-Net have been used on Line
+          Plots, Heatmap images, RP images, GAF images, and even a mixture of GAF, MTF and RP images.
+          For time series generation tasks, GAN frameworks of CNNs and a diffusion model with U-Nets
+          have also been explored. Due to their small to medium sizes, these models are often trained
+          from scratch using task-specific training data; meanwhile, fine-tuning pre-trained vision
+          models has already been found promising in cross-modal knowledge transfer for time series
+          anomaly detection and forecasting.
+        </p>
+        <p data-zh="<b>大视觉模型（LVM）</b>Vision Transformer（ViT）启发了 Swin、BEiT、MAE 等现代 LVM 的发展。ViT 把一张图像切成固定大小的图块，对每个图块作嵌入并加上位置编码，图块向量随后像 token 嵌入一样被 Transformer 处理。相较于 CNN，ViT 的数据效率更低，但容量更高，因此预训练的 ViT 被用于建模图像化的时间序列。例如 AST 在音频的滤波器组频谱图上微调 DeiT 以完成分类任务，并发现在 ImageNet 上预训练的 DeiT 在知识迁移上效果显著。VisionTS 把 LVM 在知识迁移上优于 LLM 的原因归结为预训练图像与图像化时间序列之间的差距较小；它发现只需一轮微调，MAE 就能在部分基准数据集上成为最先进的时间序列预测器。此外也有一些用图像化时间序列预训练 ViT 架构的初步尝试：SSAST 提出掩码频谱图块预测框架，在 AudioSet-2M 这一大规模数据集上预训练 ViT；ViTime 则生成大量合成单变量序列的折线图来预训练 ViT，并在基准数据集的零样本预测任务上被发现优于 TimesFM。">
+          <b>Large Vision Models</b> Vision Transformer (ViT) has inspired the development of modern
+          LVMs such as Swin, BEiT and MAE. ViT splits an image into patches of fixed size, then embeds
+          each patch and augments it with a positional embedding; the vectors of patches are processed
+          by a Transformer as if they were token embeddings. Compared to CNNs, ViTs are less
+          data-efficient, but have higher capacity, so pre-trained ViTs have been explored for modeling
+          imaged time series. <code>AST</code> fine-tunes DeiT on the filterbank spectrogram of audios
+          for classification tasks and finds ImageNet-pretrained DeiT is remarkably effective in
+          knowledge transfer. <code>VisionTS</code> attributes LVMs' superiority over LLMs in knowledge
+          transfer to the small gap between the pre-trained images and imaged time series; it finds
+          that with one-epoch fine-tuning, MAE becomes the SOTA time series forecaster on some
+          benchmark datasets. There are also initial efforts in pre-training ViT architectures with
+          imaged time series: <code>SSAST</code> introduced a masked spectrogram patch prediction
+          framework for pre-training ViT on a large dataset, AudioSet-2M, and <code>ViTime</code>
+          generates a large set of Line Plots of synthetic univariate series for pre-training ViT,
+          which was found superior over TimesFM in zero-shot forecasting tasks on benchmark datasets.
+        </p>
+        <p data-zh="<b>多模态大模型（LMM）</b>随着 LMM 受到越来越多关注，LLaVA、Gemini、GPT-4o、Claude-3 等知名 LMM 被用于把 LLM 与 LVM 的能力结合起来做时间序列分析。由于 LMM 支持通过提示输入多模态内容，这一路线上的方法通常用时间序列的文本表示与图像表示，以及关于执行何种任务的指令来提示 LMM。InsightMiner 是一项开创性工作，它用 LLaVA 架构生成描述每条输入单变量序列趋势的文本；类似地，也有工作采用 LLaVA 架构做多元序列分类，把多元序列编码为所有变量折线图堆叠后的视觉嵌入，同时在提示中把序列矩阵口语化作为文本模态。此外，若干商用 LMM 的零样本与上下文学习性能已在音频分类、异常检测和一些合成任务上被评估，其中查询序列的图像与文本表示被整合进提示；在上下文学习中，这些方法把少量示例序列的图像及其标签注入指令，以提示 LMM 辅助对查询序列的预测。">
+          <b>Large Multimodal Models</b> As LMMs get growing attention, some notable LMMs such as
+          LLaVA, Gemini, GPT-4o and Claude-3 have been explored to consolidate the power of LLMs and
+          LVMs for time series analysis. Since LMMs support multimodal input via prompts, methods in
+          this thread typically prompt LMMs with textual and imaged representations of time series, and
+          instructions on what tasks to perform. <code>InsightMiner</code> is a pioneer work that uses
+          the LLaVA architecture to generate texts describing the trend of each input univariate series;
+          similarly, other work adopts the LLaVA architecture for multivariate classification, encoding
+          a series by the visual embeddings of the stacked Line Plots of all variates while the matrix
+          is also verbalized in a prompt as the textual modality. Moreover, zero-shot and in-context
+          learning performance of several commercial LMMs have been evaluated for audio classification,
+          anomaly detection, and some synthetic tasks, where the image and textual representations of a
+          query time series are integrated into a prompt; for in-context learning, these methods inject
+          the images of a few example time series and their labels into an instruction to prompt LMMs
+          for assisting the prediction of the query time series.
+        </p>
+        <p data-zh="<b>任务专用输出头</b>对于分类任务，下表中的大多数方法采用一个全连接（FC）层或多层感知机（MLP）把嵌入变换为所有类别上的概率分布。对于预测任务有两种做法：一是用一个 MLP／FC 层从嵌入直接预测未来某个时间窗口内的序列取值；二是预测代表序列未来部分的像素值，再从预测出的图像中还原时间序列。插补与生成任务与预测类似，因为它们同样要预测序列取值，因此第二种做法也被用于插补与生成。当使用 LMM 做分类、文本生成与异常检测时，大多数方法通过提示让 LMM 以文本答案的形式给出所需输出，从而绕开任务专用输出头。">
+          <b>Task-specific heads</b> For classification tasks, most of the methods in the table below
+          adopt a fully connected (FC) layer or multilayer perceptron (MLP) to transform an embedding
+          into a probability distribution over all classes. For forecasting tasks, there are two
+          approaches: using an MLP/FC layer to directly predict, from the embedding, the time series
+          values in a future time window; or predicting the pixel values that represent the future part
+          of the time series and then recovering the time series from the predicted image. Imputation
+          and generation tasks resemble forecasting as they also predict time series values, so the
+          second approach has been used for imputation and generation as well. When using LMMs for
+          classification, text generation, and anomaly detection, most of the methods prompt LMMs to
+          produce the desired outputs in textual answers, circumventing task-specific heads.
+        </p>
+      </div>
+
+      <h3 class="sub" data-zh="前处理与后处理">Pre-processing and post-processing</h3>
+
+      <div class="run-in">
+        <p data-zh="<b>时间序列归一化</b>视觉模型通常是在标准化的图像上训练的。为了对齐，前述图像应当按受控的均值与标准差作归一化，正如已有工作在频谱图上所做的那样。特别地，由于热力图直接建立在原始序列取值之上，VisionTS 建议在时间序列上采用常用的实例归一化（IN），因为 IN 与标准化有相似的功效。使用折线图则需要恰当的 y 轴范围：除了对序列作缩放之外，ViTST 引入了若干从图中剔除极端值的方法。GAF 要求对输入作最小‑最大归一化，因为它把 [0, 1] 区间内的序列取值变换到极坐标（即反余弦）。相比之下，RP 的输入通常无需归一化，因为在阈值化之前已经涉及一个 ℓ2 范数。">
+          <b>Time series normalization</b> Vision models are usually trained on standardized images. To
+          be aligned, the images introduced above should be normalized with a controlled mean and
+          standard deviation, as has been done on spectrograms. In particular, as Heatmap is built on
+          raw time series values, the commonly used Instance Normalization can be applied on the time
+          series as suggested by <code>VisionTS</code>, since it shares similar merits as
+          standardization. Using Line Plot requires a proper range of y-axis: in addition to rescaling
+          time series, <code>ViTST</code> introduced several methods to remove extreme values from the
+          plot. GAF requires min-max normalization on its input, as it transforms time series values
+          within [0, 1] to polar coordinates. In contrast, input to RP is usually normalization-free as
+          an ℓ2 norm is involved before thresholding.
+        </p>
+        <p data-zh="<b>图像对齐</b>使用预训练模型时，必须让图像尺寸符合模型的输入要求。对基于 Transformer 的模型尤其如此，因为它们用固定数量的位置编码来刻画图块的空间信息。对于折线图这类三通道 RGB 图像，只需在生成图像时调整分辨率即可满足预定尺寸；而对于热力图、频谱图、GAF、RP 这类建立在矩阵之上的图像，通道数与矩阵尺寸都需要调整。在通道方面，一种做法是把矩阵复制成三通道，另一种做法是把三通道图块嵌入层的权重平均成单通道层；在尺寸方面，双线性插值是常用的图像缩放方法，另一种替代做法是缩放位置编码而不是图像本身，以把模型适配到期望的输入尺寸。然而，这些方法中的插值可能改变时间序列本身，或改变位置编码中的空间信息。">
+          <b>Image alignment</b> When using pre-trained models, it is imperative to fit the image size
+          to the input requirement of the models. This is especially true for Transformer based models
+          as they use a fixed number of positional embeddings to encode the spatial information of
+          image patches. For 3-channel RGB images such as Line Plot, it is straightforward to meet a
+          pre-defined size by adjusting the resolution when producing the image. For images built upon
+          matrices such as Heatmap, Spectrogram, GAF and RP, the number of channels and matrix size
+          need adjustment: for the channels, one method is to duplicate a matrix to 3 channels, another
+          way is to average the weights of the 3-channel patch embedding layer into a 1-channel layer;
+          for the image size, bilinear interpolation is a common method to resize input images, and an
+          alternative is to resize the positional embeddings instead of the images to fit the model to
+          a desired input size. However, the interpolation in these methods may either alter the time
+          series or the spatial information in positional embeddings.
+        </p>
+        <p data-zh="<b>时间序列还原</b>预测、插补与生成等任务需要预测序列取值。对于预测图像像素值的模型，后处理涉及从预测出的图像中还原时间序列。从折线图还原是件棘手的事，它需要定位代表时间序列的像素并把它们映射回原始取值，这可以通过操作网格状折线图来实现，此类方法自带还原函数。相比之下，从热力图还原很直接，因为它直接存储了预测出的序列取值。频谱图在这些任务上尚未被充分探索，如何从中还原时间序列仍是开放问题；已有工作仅把频谱图用于预测，并配以一个直接预测序列的 MLP 输出头。GAF 支持通过从极坐标到归一化序列的逆映射作精确还原。然而 RP 在阈值化过程中丢失了序列信息，因此若不借助专门的预测头，可能并不适合需要还原的任务。">
+          <b>Time series recovery</b> Tasks such as forecasting, imputation and generation require
+          predicting time series values. For models that predict pixel values of images, post-processing
+          involves recovering time series from the predicted images. Recovery from Line Plots is tricky:
+          it requires locating pixels that represent time series and mapping them back to the original
+          values, which can be done by manipulating a grid-like Line Plot that comes with a recovery
+          function. In contrast, recovery from Heatmap is straightforward as it directly stores the
+          predicted time series values. Spectrogram is underexplored in these tasks and it remains open
+          on how to recover time series from it; the existing work uses Spectrogram for forecasting
+          only with an MLP head that directly predicts time series. GAF supports accurate recovery by
+          an inverse mapping from polar coordinates to normalized time series. However, RP lost time
+          series information during thresholding, thus may not fit recovery-demanded tasks without
+          using an ad-hoc prediction head.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="taxonomy">
+  <div class="band-inner">
+    <div class="band-label" data-zh="分类体系">Taxonomy</div>
+    <div class="band-body">
+      <h2 data-zh="38 项工作，同时沿两个视角读">Thirty-eight methods, read along both views</h2>
+
+      <div class="prose">
+        <p data-zh="为了凸显分类体系，我们把前处理与后处理的设计要点留到最后讨论。为便于比较，下表汇总了已有方法：上半部分是单模态模型，下半部分是多模态模型。可以看到，多模态分析（含视觉模态）方面的研究远少于单模态分析，且涉及的时间序列任务范围有限。">
+          To highlight the taxonomy, we defer the discussion on the desiderata of pre- and
+          post-processing to the end of this survey. For comparison, the table below summarizes the
+          existing methods: the top part includes unimodal models, the bottom part includes multimodal
+          models. As can be seen, the existing research on multimodal analysis (with vision modality) is
+          much less than unimodal analysis, with a limited scope of time series tasks.
+        </p>
+      </div>
+
+      <div>
+        <div class="controls">
+          <div class="ctl">
+            <span class="ctl-label" data-zh="成像方法">Imaging</span>
+            <div class="choices" id="img-seg">
+              <button data-i="all" aria-pressed="true" data-zh="全部">All</button>
+              <button data-i="LinePlot" data-zh="折线图">Line Plot</button>
+              <button data-i="Heatmap" data-zh="热力图">Heatmap</button>
+              <button data-i="Spectrogram" data-zh="频谱图">Spectrogram</button>
+              <button data-i="GAF">GAF</button>
+              <button data-i="RP">RP</button>
+              <button data-i="Other" data-zh="其他">Other</button>
+            </div>
+          </div>
+          <div class="ctl">
+            <span class="ctl-label" data-zh="任务">Task</span>
+            <div class="choices" id="task-seg">
+              <button data-t="all" aria-pressed="true" data-zh="全部">All</button>
+              <button data-t="Classification" data-zh="分类">Classification</button>
+              <button data-t="Forecasting" data-zh="预测">Forecasting</button>
+              <button data-t="Anomaly" data-zh="异常检测">Anomaly</button>
+              <button data-t="Ts-Generation" data-zh="序列生成">Ts-Generation</button>
+              <button data-t="Multiple" data-zh="多任务">Multiple</button>
+              <button data-t="rest" data-zh="其他">Other</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="tablewrap">
+          <table class="data" id="taxo-table"><thead></thead><tbody></tbody></table>
+        </div>
+        <p class="note" data-zh="视觉模型用于时间序列的分类体系。<b>序列类型</b>指时间序列的类型；<b>序列还原</b>指从预测出的图像中还原时间序列。<b>*</b>：该方法被用于对多元序列的各个变量分别建模。<b>♮</b>：该工作提出了一个新的预训练模型。<b>♭</b>：当未使用预训练模型时，“微调”指从头训练一个任务专用模型。<b>模型</b>一列：CNN 可以是常规 CNN、ResNet、VGG-Net 等。">
+          Taxonomy of vision models on time series. <b>TS-Type</b> denotes type of time series.
+          <b>TS-Recover</b> denotes recovering time series from predicted images. <b>*</b>: the method
+          has been used to model the individual variates of a multivariate series. <b>♮</b>: a new
+          pre-trained model was proposed in the work. <b>♭</b>: when pre-trained models were unused,
+          "Fine-tune" refers to train a task-specific model from scratch. <b>Model</b> column: CNN could
+          be regular CNN, ResNet, VGG-Net, etc.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="repository">
+  <div class="band-inner">
+    <div class="band-label" data-zh="资源库">Repository</div>
+    <div class="band-body">
+      <h2 data-zh="一份持续更新的资源清单，以及每种成像方法的代码">An up-to-date resource list, and the code for every imaging method</h2>
+
+      <div class="prose">
+        <p data-zh="我们还维护了一个 Github 资源库，提供持续更新的资源，其中包括本文成像方法一节所涉及方法的代码。我们希望这份综述能与已有的关于 Transformer、LLM 以及时间序列基础模型的综述形成正交互补，并提供一个关于“如何用视觉模型做时间序列分析”这一完整流程的全景视角，从而成为该领域开发者的一本有价值的指南。">
+          A Github repository is also maintained to provide up-to-date resources including our code of
+          the imaging methods discussed above. We hope this survey could be an orthogonal complement to
+          the existing surveys on Transformer, LLMs and foundation models for time series, and provide
+          a complete view on the process of using vision models for time series analysis, so as to be
+          an insightful guidebook to the developers in this area.
+        </p>
+      </div>
+
+      <div class="actions">
+        <a class="btn primary" href="https://github.com/D2I-Group/awesome-vision-time-series">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.73.5.5 5.73.5 12a11.5 11.5 0 0 0 7.86 10.92c.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.37-3.88-1.37-.53-1.34-1.29-1.7-1.29-1.7-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.2 1.77 1.2 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.56-.29-5.25-1.28-5.25-5.7 0-1.26.45-2.29 1.19-3.1-.12-.3-.52-1.47.11-3.06 0 0 .97-.31 3.18 1.18a11 11 0 0 1 5.79 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.24 2.76.12 3.05.74.82 1.19 1.85 1.19 3.11 0 4.43-2.7 5.41-5.27 5.69.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 23.5 12C23.5 5.73 18.27.5 12 .5z"/></svg>
+          D2I-Group/awesome-vision-time-series
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="directions">
+  <div class="band-inner">
+    <div class="band-label" data-zh="挑战与方向">Challenges and directions</div>
+    <div class="band-body">
+      <h2 data-zh="这个领域尚未解决的五个问题">Five questions the field has not settled</h2>
+
+      <div class="run-in">
+        <p data-zh="<b>基础性理解</b>面对多种可用的成像方法，现有工作大多凭直觉去选择。对“哪种成像方法适合哪类任务”，以及“LVM 是否真的学到了让它们比 LLM 更适合时间序列的模式”等问题，理论与经验上的理解都仍有空白。一些已有工作评估了多种成像方法，但只在有限的任务上进行，例如 ImagenTime 在时间序列生成任务中比较了 GAF、STFT 与时延嵌入的表示能力。然而，跨成像方法、能够指导 LVM 与 LMM 发展的系统性理解仍然缺失。本综述给出了初步的比较性讨论，进一步的实证与理论研究对于 LVM／LMM 与时间序列分析之间的协同至关重要。">
+          <b>Fundamental understanding</b> With various imaging methods available, most existing works
+          select them based on intuition. There remains a gap in both theoretical and empirical
+          understanding of questions such as which imaging methods fit which tasks and whether LVMs
+          truly learn patterns that make them better suited to time series than LLMs. Some existing
+          works evaluate multiple imaging methods, but in limited tasks; for example
+          <code>ImagenTime</code> compares the representation abilities of GAF, STFT and delay embedding
+          in a time series generation task. However, a thorough understanding to guide the development
+          of LVMs and LMMs across imaging methods is absent. This survey provides an initial comparative
+          discussion, and further empirical and theoretical investigations are essential to the synergy
+          between LVMs/LMMs and time series analysis.
+        </p>
+        <p data-zh="<b>建模多元序列中变量间的相关性</b>已有的多元序列成像方法各有局限。例如热力图编码的是空间关系，因此变量的行序会影响相关性的建模方式，这意味着相关的变量应当在空间上彼此靠近；同样地，折线图也没有显式刻画变量间的相关性。把每个变量作为一个通道堆叠成 d 通道输入，又会妨碍使用期望三通道 RGB 输入的预训练 LVM。因此，需要更有效的成像或建模技术（例如在变量上引入图神经网络）来更好地刻画多元序列中的相关性。">
+          <b>Modeling the correlation of variates</b> The existing methods for imaging multivariate
+          series each come with limitations. Heatmaps encode spatial relationships, so the row order of
+          variates affects how correlations are modeled, implying correlated variates should be
+          spatially close to each other; similarly, Line Plots do not explicitly capture inter-variate
+          correlations. Stacking one channel per variate into a d-channel input hinders the use of
+          pre-trained LVMs, which expect 3-channel RGB inputs. Therefore, there is a need for more
+          effective imaging or modeling techniques — e.g., incorporating graph neural networks on
+          variates — to better capture correlations in multivariate series.
+        </p>
+        <p data-zh="<b>更先进的时间序列成像</b>除了上述基本方法之外，更先进的图像表示同样值得期待。例如 InsightMiner 采用了季节‑趋势分解，这类分解常被用来提取可以充当时间序列模型归纳偏置的成分；把这一思路推广到把频谱图、GAF、RP 这类图像分解为更细粒度的成分，或许能提升视觉模型的效果。此外，把来自不同视角的多种成像方法结合起来——例如频率（频谱图）、时间结构（GAF）与递归模式（RP）——可以提供更丰富的表示。FIRTS 跨通道堆叠图像用于分类任务，但仅限于尺寸相同的图像；用多视角学习等方法对任意图像的混合建模，可能带来更大的灵活性。">
+          <b>Advanced imaging for time series</b> In addition to the basic methods introduced above,
+          advanced image representations hold promise. For example, <code>InsightMiner</code> adopts
+          seasonal-trend decomposition, which is often used to extract components that can serve as
+          inductive biases for time series models; extending this idea to decompose images such as
+          Spectrogram, GAF and RP into finer-grained components may enhance vision models'
+          effectiveness. Moreover, combining multiple imaging methods from different views, such as
+          frequency (Spectrogram), temporal structure (GAF), and recurrence patterns (RP), can provide
+          richer representations. <code>FIRTS</code> stacks images across channels for a classification
+          task, but is limited to images of the same size; modeling a mixture of arbitrary images by
+          methods such as multi-view learning may enable more flexibility.
+        </p>
+        <p data-zh="<b>多模态时间序列模型与智能体</b>从上面的表格可以看出，多模态分析（含视觉模态）方面的研究远少于单模态分析，且涉及的时间序列任务范围有限。鉴于已有面向时间序列的 LLM，如 Time-LLM 与 S²IP，引入视觉模态以在预测、分类、异常检测等广泛任务上进一步提升性能颇具吸引力。更进一步，时间序列的视觉表示为探索多模态 AI 智能体奠定了基础，使其能够胜任需要推理并与环境交互的更复杂、更细致的任务，例如 IT 运维智能化（AIOps）中的根因分析。">
+          <b>Multimodal time series models and agents</b> As can be seen from the table above, the
+          existing research on multimodal analysis (with vision modality) is much less than unimodal
+          analysis, with a limited scope of time series tasks. Given the existing LLMs for time series
+          such as Time-LLM and S<sup>2</sup>IP, it is appealing to introduce vision modality to further
+          boost the performance in wide tasks such as forecasting, classification and anomaly detection.
+          Furthermore, the visual representation of time series provides the foundation for exploring
+          multimodal AI agents for more intricate and nuanced tasks that require reasoning and
+          interactions with environments, such as root cause analysis in AI for IT Operations (AIOps).
+        </p>
+        <p data-zh="<b>基于视觉的时间序列基础模型</b>基础模型是在海量数据上训练、适用于广泛任务的深度学习模型。近期的时间序列基础模型，如 TimesFM、MOMENT、Chronos 与 Time-MoE，大多建立在 LLM 架构之上并在原始时间序列上训练。鉴于图像表示的潜力，探索以视觉模型作为新架构来革新时间序列基础模型是很有前景的。这一研究方向不仅能发挥 LVM 的优势（例如从海量预训练图像中提取的先验知识），也为未来面向时间序列的视觉语言基础模型的发展打开了空间。">
+          <b>Vision-based time series foundation models</b> A foundation model is a deep learning model
+          trained on vast datasets that is applicable to a wide range of tasks. Recent time series
+          foundation models, such as TimesFM, MOMENT, Chronos and Time-MoE, are mostly built upon LLM
+          architectures and trained on raw time series. Given the potential of image representation, it
+          is promising to explore vision models as a new architecture to revolutionize time series
+          foundation models. This research direction not only leverages the advantages of LVMs — e.g.,
+          the prior knowledge extracted from the vast pre-training images — but also enables future
+          development of vision-language foundation models for time series.
+        </p>
+      </div>
+
+      <div class="prose">
+        <p data-zh="本文给出了第一份关于利用视觉模型进行时间序列分析的综述，其一般流程也构成了综述本身的结构。我们提出了一套由成像方法与建模方法组成的新分类体系，并一并讨论了前处理与后处理步骤。每一类都涵盖代表性方法与相关评述。">
+          This is the first survey on leveraging vision models for time series analysis, whose general
+          process structures the survey. We propose a new taxonomy consisting of imaging and modeling
+          methods for time series, and discuss the pre- and post-processing steps as well. Each category
+          encompasses representative methods and relevant remarks.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="cite">
+  <div class="band-inner">
+    <div class="band-label" data-zh="引用">Citation</div>
+    <div class="band-body">
+      <h2 data-zh="引用本文">Cite this work</h2>
+      <div class="cite">
+        <div class="cite-head">
+          BibTeX
+          <button class="copy" id="copy-bib" data-zh="复制">Copy</button>
+        </div>
+<pre id="bibtex">@inproceedings{ni2025harnessing,
+  title     = {Harnessing Vision Models for Time Series Analysis: A Survey},
+  author    = {Ni, Jingchao and Zhao, Ziming and Shen, ChengAo and Tong, Hanghang and Song, Dongjin and Cheng, Wei and Luo, Dongsheng and Chen, Haifeng},
+  booktitle = {Proceedings of the Thirty-Fourth International Joint Conference on Artificial Intelligence},
+  year      = {2025}
+}</pre>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="footer-mark">Vision × Time Series</div>
+      <p data-zh="IJCAI 2025 · 休斯敦大学 D2I 组">
+        IJCAI 2025 · D2I Group, University of Houston
+      </p>
+      <p class="footer-contact">
+        <a href="mailto:jni7@uh.edu">jni7@uh.edu</a> ·
+        <a href="https://github.com/D2I-Group/awesome-vision-time-series/issues" data-zh="提交 issue">Open an issue</a>
+      </p>
+    </div>
+
+    <div class="footer-links">
+      <div>
+        <h3 data-zh="论文">Paper</h3>
+        <ul>
+          <li><a href="https://arxiv.org/abs/2502.08869">arXiv:2502.08869</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 data-zh="资源库">Repository</h3>
+        <ul>
+          <li><a href="https://github.com/D2I-Group/awesome-vision-time-series">GitHub</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-related">
+      <h3 data-zh="D2I 组的其他工作">More from the D2I Group</h3>
+      <ul class="related">
+        <li>
+          <a href="https://d2i-group.github.io/metacaster/">MetaCaster: Meta-Harness-Optimized Agent for End-to-End Few-Shot Learning of Lightweight Time Series Forecasters</a>
+          <span class="meta">EMNLP 2026 · <a href="https://arxiv.org/abs/2608.23473">arXiv:2608.23473</a> · <a href="https://github.com/D2I-Group/metacaster">GitHub</a></span>
+        </li>
+        <li>
+          <a href="https://github.com/D2I-Group/dmmv">Multi-Modal View Enhanced Large Vision Models for Long-Term Time Series Forecasting</a>
+          <span class="meta">NeurIPS 2025 · <a href="https://arxiv.org/abs/2505.24003">arXiv:2505.24003</a></span>
+        </li>
+        <li>
+          <a href="https://github.com/D2I-Group/matmcd">Exploring Multi-Modal Data with Tool-Augmented LLM Agents for Precise Causal Discovery</a>
+          <span class="meta"><a href="https://arxiv.org/abs/2412.13667">arXiv:2412.13667</a></span>
+        </li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+<script src="static/js/core.js"></script>
+<script src="static/js/main.js"></script>
+</body>
+</html>
